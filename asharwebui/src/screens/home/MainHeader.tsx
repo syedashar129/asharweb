@@ -49,7 +49,7 @@ export function MainHeader() {
                         </Button>
                     </Group>
                 </div>
-                {/*<Image src={image.src} className={classes.image} />*/}
+                <Image src={'/profile_image.jpeg'} className={classes.image} />
             </div>
         </Container>
     );

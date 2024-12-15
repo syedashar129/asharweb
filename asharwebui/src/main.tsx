@@ -7,7 +7,7 @@ import '@mantine/core/styles.css';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-      <MantineProvider theme={{ colorScheme: 'dark' }} withGlobalStyles withNormalizeCSS>
+      <MantineProvider theme={{ fontFamily: 'JetBrains Mono'}} withGlobalStyles withNormalizeCSS>
           <App />
       </MantineProvider>
   </StrictMode>,

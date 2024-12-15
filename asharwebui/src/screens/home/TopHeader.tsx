@@ -1,36 +1,25 @@
 import { IconChevronDown } from '@tabler/icons-react';
-import { Burger, Center, Container, Group, Menu } from '@mantine/core';
+import {Burger, Center, Container, Group, Menu, Title} from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { MantineLogo } from '@mantinex/mantine-logo';
-import classes from '../../styles/home/HeaderMenu.module.css';
+import classes from '../../styles/home/TopHeader.module.css';
 
 
 const links = [
-    { link: '/about', label: 'Features' },
-    {
-        link: '#1',
-        label: 'Learn',
-        links: [
-            { link: '/docs', label: 'Documentation' },
-            { link: '/resources', label: 'Resources' },
-            { link: '/community', label: 'Community' },
-            { link: '/blog', label: 'Blog' },
-        ],
-    },
-    { link: '/about', label: 'About' },
-    { link: '/pricing', label: 'Pricing' },
+    { link: '/about', label: 'Home' },
+    { link: '/about', label: 'Projects' },
+    { link: '/pricing', label: 'Blog' },
     {
         link: '#2',
-        label: 'Support',
+        label: 'About Me',
         links: [
-            { link: '/faq', label: 'FAQ' },
-            { link: '/demo', label: 'Book a demo' },
-            { link: '/forums', label: 'Forums' },
+            { link: '/faq', label: 'Who am I?' },
+            { link: '/forums', label: 'Download Resume' },
         ],
     },
 ];
 
-export function HeaderMenu() {
+export function TopHeader() {
     const [opened, { toggle }] = useDisclosure(false);
 
     const items = links.map((link) => {
@@ -74,7 +63,8 @@ export function HeaderMenu() {
         <header className={classes.header}>
             <Container size="md">
                 <div className={classes.inner}>
-                    <MantineLogo size={28} />
+                    {/*<MantineLogo size={28} />*/}
+                    <Title order={3}>Syed Ashar</Title>
                     <Group gap={5} visibleFrom="sm">
                         {items}
                     </Group>

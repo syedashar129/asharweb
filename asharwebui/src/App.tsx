@@ -1,5 +1,5 @@
 import './App.css'
-import {HeaderMenu} from "./screens/home/HeaderMenu.tsx";
+import {TopHeader} from "./screens/home/TopHeader.tsx";
 import {MainHeader} from "./screens/home/MainHeader.tsx";
 import {BlogCarousel} from "./screens/home/BlogCarousel.tsx";
 
@@ -8,7 +8,7 @@ function App() {
 
   return (
     <>
-        <HeaderMenu/>
+        <TopHeader/>
         <MainHeader/>
         <BlogCarousel/>
     </>
