@@ -2,13 +2,14 @@ import { IconChevronDown } from '@tabler/icons-react';
 import {Burger, Center, Container, Group, Menu, Title} from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { MantineLogo } from '@mantinex/mantine-logo';
-import classes from '../../styles/home/TopHeader.module.css';
+import classes from '../../../styles/home/TopHeader.module.css';
+import {Link} from "react-router-dom";
 
 
 const links = [
-    { link: '/about', label: 'Home' },
-    { link: '/about', label: 'Projects' },
-    { link: '/pricing', label: 'Blog' },
+    { link: '/', label: 'Home' },
+    { link: '/projects', label: 'Projects' },
+    { link: '/blog', label: 'Blog' },
     {
         link: '#2',
         label: 'About Me',
@@ -48,14 +49,13 @@ export function TopHeader() {
         }
 
         return (
-            <a
+            <Link
                 key={link.label}
-                href={link.link}
+                to={link.link}
                 className={classes.link}
-                onClick={(event) => event.preventDefault()}
             >
                 {link.label}
-            </a>
+            </Link>
         );
     });
 

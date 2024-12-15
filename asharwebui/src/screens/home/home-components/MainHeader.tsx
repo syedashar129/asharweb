@@ -1,7 +1,7 @@
 import { IconCheck } from '@tabler/icons-react';
 import { Button, Container, Group, Image, List, Text, ThemeIcon, Title } from '@mantine/core';
 // import image from './image.svg';
-import classes from '../../styles/home/MainHeader.module.css';
+import classes from '../../../styles/home/MainHeader.module.css';
 
 export function MainHeader() {
     return (

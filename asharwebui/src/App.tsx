@@ -1,16 +1,32 @@
 import './App.css'
-import {TopHeader} from "./screens/home/TopHeader.tsx";
-import {MainHeader} from "./screens/home/MainHeader.tsx";
-import {BlogCarousel} from "./screens/home/BlogCarousel.tsx";
+import {TopHeader} from "./screens/home/home-components/TopHeader.tsx";
+import {MainHeader} from "./screens/home/home-components/MainHeader.tsx";
+import {BlogCarousel} from "./screens/home/home-components/BlogCarousel.tsx";
+import {Route, Routes} from "react-router-dom";
+import Home from "./screens/home/HomePage.tsx";
+import Projects from "./screens/projects/Projects.tsx";
+import Blog from "./screens/blog/Blog.tsx";
+import AboutMe from "./screens/aboutme/AboutMe.tsx";
 
 
 function App() {
 
   return (
     <>
+        {/*this header stays on every page*/}
         <TopHeader/>
-        <MainHeader/>
-        <BlogCarousel/>
+
+
+        <Routes>
+            <Route path={'/'} element={<Home/>}/>
+            <Route path={'/projects'} element={<Projects/>}/>
+            <Route path={'/blog'} element={<Blog/>}/>
+            <Route path={'/aboutme'} element={<AboutMe/>}/>
+        </Routes>
+
+
+
+
     </>
   )
 }
