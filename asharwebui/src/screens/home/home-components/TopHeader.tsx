@@ -4,6 +4,7 @@ import { useDisclosure } from '@mantine/hooks';
 import { MantineLogo } from '@mantinex/mantine-logo';
 import classes from '../../../styles/home/TopHeader.module.css';
 import {Link} from "react-router-dom";
+import { ThemeToggle } from '../../../components/ThemeToggle';
 
 
 const links = [
@@ -69,6 +70,7 @@ export function TopHeader() {
                         {items}
                     </Group>
                     <Burger opened={opened} onClick={toggle} size="sm" hiddenFrom="sm" />
+                    <ThemeToggle/>
                 </div>
             </Container>
         </header>
