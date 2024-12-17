@@ -1,12 +1,9 @@
-import { IconBrandGithub, IconBrandGithubFilled, IconChevronDown, IconSun } from '@tabler/icons-react';
-import {ActionIcon, Burger, Center, Container, Group, Menu, Title} from '@mantine/core';
+import { IconChevronDown } from '@tabler/icons-react';
+import {Burger, Center, Container, Group, Menu, Title} from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { MantineLogo } from '@mantinex/mantine-logo';
 import classes from '../../../styles/home/TopHeader.module.css';
 import {Link} from "react-router-dom";
 import { ThemeToggle } from '../../../components/ThemeToggle';
-import themeClasses from '../../../styles/home/ThemeToggle.module.css';
-import cx from 'clsx';
 import GithubLogo from '../../../components/GithubLogo';
 import LinkedinLogo from '../../../components/LinkedinLogo';
 
@@ -16,11 +13,10 @@ const links = [
     { link: '/projects', label: 'Projects' },
     { link: '/blog', label: 'Blog' },
     {
-        link: '#2',
         label: 'About Me',
         links: [
-            { link: '/faq', label: 'Who am I?' },
-            { link: '/forums', label: 'Download Resume' },
+            { link: '/whoami', label: 'Who am I?', type:''},
+            { link: '/resume.pdf', label: 'Download Resume', type:'download'},
         ],
     },
 ];
@@ -30,9 +26,21 @@ export function TopHeader() {
 
     const items = links.map((link) => {
         const menuItems = link.links?.map((item) => (
-            <Menu.Item key={item.link}>{item.label}</Menu.Item>
+            // each item here is the subtitles
+            <Menu.Item key={item.link}>
+                {item.type === 'download' ? 
+                    <a href={item.link}download='Syed_Ashar_Resume.pdf' className={classes.link}>{item.label}</a>
+                     
+                    :
+
+                    <Link to={item.link} key={item.label} className={classes.link}>
+                        {item.label}
+                    </Link>
+                }
+            </Menu.Item>
         ));
 
+        // this is here to trigger dropwdown effect on items which are multi-layered
         if (menuItems) {
             return (
                 <Menu key={link.label} trigger="hover" transitionProps={{ exitDuration: 0 }} withinPortal>
@@ -75,7 +83,7 @@ export function TopHeader() {
                     <Group gap={5} visibleFrom="sm">
                         {items}
                     </Group>
-                    
+
                     <Burger opened={opened} onClick={toggle} size="sm" hiddenFrom="sm" />
                     
                     <Group gap={5} visibleFrom="sm">
