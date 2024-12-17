@@ -1,10 +1,14 @@
-import { IconChevronDown } from '@tabler/icons-react';
-import {Burger, Center, Container, Group, Menu, Title} from '@mantine/core';
+import { IconBrandGithub, IconBrandGithubFilled, IconChevronDown, IconSun } from '@tabler/icons-react';
+import {ActionIcon, Burger, Center, Container, Group, Menu, Title} from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { MantineLogo } from '@mantinex/mantine-logo';
 import classes from '../../../styles/home/TopHeader.module.css';
 import {Link} from "react-router-dom";
 import { ThemeToggle } from '../../../components/ThemeToggle';
+import themeClasses from '../../../styles/home/ThemeToggle.module.css';
+import cx from 'clsx';
+import GithubLogo from '../../../components/GithubLogo';
+import LinkedinLogo from '../../../components/LinkedinLogo';
 
 
 const links = [
@@ -63,15 +67,25 @@ export function TopHeader() {
     return (
         <header className={classes.header}>
             <Container size="md">
+
+                {/* this is the top header */}
                 <div className={classes.inner}>
                     {/*<MantineLogo size={28} />*/}
                     <Title order={3}>Syed Ashar</Title>
                     <Group gap={5} visibleFrom="sm">
                         {items}
                     </Group>
+                    
                     <Burger opened={opened} onClick={toggle} size="sm" hiddenFrom="sm" />
-                    <ThemeToggle/>
+                    
+                    <Group gap={5} visibleFrom="sm">
+                        <ThemeToggle/>
+                        <GithubLogo/>
+                        <LinkedinLogo/>
+                    </Group>
+                
                 </div>
+                    
             </Container>
         </header>
     );
