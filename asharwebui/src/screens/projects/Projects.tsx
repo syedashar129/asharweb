@@ -1,10 +1,15 @@
-
+import {ProjectItem} from "./ProjectItem.tsx";
 
 
 export default function Projects(){
+
     return (
-        <>
-            <h1>Projects</h1>
-        </>
+        <div style={{display: 'flex', flexDirection: 'column', gap: '16px'}}>
+            <ProjectItem tags={} title={} githubLink={} image={} desciption={}/>
+            <ProjectItem/>
+            <ProjectItem/>
+            <ProjectItem/>
+            <ProjectItem/>
+        </div>
     )
 }
