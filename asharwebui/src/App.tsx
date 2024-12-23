@@ -1,7 +1,5 @@
 import './App.css'
 import {TopHeader} from "./screens/home/home-components/TopHeader.tsx";
-import {MainHeader} from "./screens/home/home-components/MainHeader.tsx";
-import {BlogCarousel} from "./screens/home/home-components/BlogCarousel.tsx";
 import {Route, Routes} from "react-router-dom";
 import Home from "./screens/home/HomePage.tsx";
 import Projects from "./screens/projects/Projects.tsx";
