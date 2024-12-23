@@ -2,6 +2,7 @@ import { IconCheck } from '@tabler/icons-react';
 import { Button, Container, Group, Image, List, Text, ThemeIcon, Title } from '@mantine/core';
 // import image from './image.svg';
 import classes from '../../../styles/home/MainHeader.module.css';
+import {Link} from "react-router-dom";
 
 export function MainHeader() {
     return (
@@ -9,11 +10,12 @@ export function MainHeader() {
             <div className={classes.inner}>
                 <div className={classes.content}>
                     <Title className={classes.title}>
-                        A <span className={classes.highlight}>modern</span> React <br /> components library
+                        Hi I'm <span className={classes.highlight}>Syed Ashar</span> <br /> Software Engineer
                     </Title>
                     <Text c="dimmed" mt="md">
-                        Build fully functional accessible web applications faster than ever – Mantine includes
-                        more than 120 customizable components and hooks to cover you in any situation
+                        I am a 22-year-old full-time software engineer with 1.5 years of experience. I am
+                        passionate about web development and data, and I’m always eager to take on new challenges and contribute
+                        to meaningful projects.
                     </Text>
 
                     <List
@@ -27,25 +29,22 @@ export function MainHeader() {
                         }
                     >
                         <List.Item>
-                            <b>TypeScript based</b> – build type safe applications, all components and hooks
-                            export types
+                            <b>Software Engineer</b> – JPMorganChase &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         </List.Item>
                         <List.Item>
-                            <b>Free and open source</b> – all packages have MIT license, you can use Mantine in
-                            any project
+                            <b>Education</b> – Masters + Bachelors in CS &nbsp;&nbsp;
                         </List.Item>
                         <List.Item>
-                            <b>No annoying focus ring</b> – focus ring will appear only when user navigates with
-                            keyboard
+                            <b>Skills</b> – Springboot/React/Java/JS/Python
                         </List.Item>
                     </List>
 
                     <Group mt={30}>
-                        <Button radius="xl" size="md" className={classes.control}>
-                            Get started
-                        </Button>
+                        <Link to={'/whoami'}>
+                            <Button radius="xl" size="md" className={classes.control}>Learn More About Me</Button>
+                        </Link>
                         <Button variant="default" radius="xl" size="md" className={classes.control}>
-                            Source code
+                            Contact me
                         </Button>
                     </Group>
                 </div>
