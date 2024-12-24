@@ -1,6 +1,5 @@
 import { IconCheck } from '@tabler/icons-react';
 import { Button, Container, Group, Image, List, Text, ThemeIcon, Title } from '@mantine/core';
-// import image from './image.svg';
 import classes from '../../../styles/home/MainHeader.module.css';
 import {Link} from "react-router-dom";
 
@@ -40,12 +39,15 @@ export function MainHeader() {
                     </List>
 
                     <Group mt={30}>
-                        <Link to={'/whoami'}>
+                        <Link to={'/contact'}>
                             <Button radius="xl" size="md" className={classes.control}>Learn More About Me</Button>
                         </Link>
-                        <Button variant="default" radius="xl" size="md" className={classes.control}>
-                            Contact me
-                        </Button>
+
+                        <Link to={'/contact'}>
+                            <Button variant="default" radius="xl" size="md" className={classes.control}>
+                                Contact me
+                            </Button>
+                        </Link>
                     </Group>
                 </div>
                 <Image src={'/profile_image.jpeg'} className={classes.image} />
