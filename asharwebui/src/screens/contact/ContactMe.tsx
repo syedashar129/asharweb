@@ -6,10 +6,6 @@ export default function ContactMe(){
         <>
             <Title>Contact me</Title>
             <UserInfo title={'Software Engineer'} name={'Syed Ashar'} email={'syedashar25@gmail.com'}/>
-
-
-
-
         </>
     )
 }

@@ -2,6 +2,8 @@ import {MainHeader} from "./home-components/MainHeader.tsx";
 import {ItemCard} from "./home-components/ItemCard.tsx";
 import {InfoCard} from "./home-components/InfoCard.tsx";
 import {Hobbies} from "./home-components/Hobbies.tsx";
+import classes from "../../styles/home/Hobbies.module.css";
+import {Text} from "@mantine/core";
 
 export default function Home(){
     return (
@@ -9,7 +11,7 @@ export default function Home(){
             <MainHeader/>
 
             {/*this is UT/UTD/Side project*/}
-            <div style={{display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px', marginBottom: '64px'}}>
+            <div style={{display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px', marginBottom: '100px'}}>
                 <ItemCard category={'Masters'} title={'Masters in Computer Science at UT Austin'} years={'(2024-2025)'}
                           image={'https://yt3.googleusercontent.com/ytc/AIdro_kc5vR0K17o85Cr-KT7zRincym_SDnnmtDvqDavIR7pBT8=s900-c-k-c0x00ffffff-no-rj'}/>
                 <ItemCard category={'Bachelors'} title={'Bachelors in Computer Science at UTD'} years={'(2020-2023)'}
@@ -19,10 +21,18 @@ export default function Home(){
             </div>
 
             {/*experience section*/}
-            <div style={{display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px'}}>
-                <InfoCard/>
-                <InfoCard/>
-                <InfoCard/>
+            <Text className={classes.supTitle}>Syed's Experience</Text>
+            <div style={{display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px', marginTop:'16px'}}>
+                <InfoCard
+                    cardTitle={'Software Engineer'}
+                    cardDescription={'Currently, I work as a Software Engineer at JPMorgan Chase, working on the Syndication Trades team. My primary tech stack includes Spring Boot, React, and SQL, complemented by experience with AWS and Terraform for cloud and infrastructure management.'}/>
+                <InfoCard
+                    cardTitle={'Software Engineer Intern'}
+                    cardDescription={'I interned at JPMorganChase (2022) as a SWE intern where I worked on creating dashboards to monitor our server metrics and health.' +
+                                     'During this internship, I worked with React, SpringBoot, Grafana, and Prometheus'}/>
+                <InfoCard
+                    cardTitle={'Certifications'}
+                    cardDescription={'I have attained the AWS Solutions Architect Associate certification'}/>
             </div>
 
             {/*hobbies section*/}
