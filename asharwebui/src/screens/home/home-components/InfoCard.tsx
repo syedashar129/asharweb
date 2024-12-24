@@ -1,14 +1,22 @@
-import { IconColorSwatch } from '@tabler/icons-react';
+import {IconCertificate, IconColorSwatch, IconDeviceLaptop} from '@tabler/icons-react';
 import { Paper, Text, ThemeIcon } from '@mantine/core';
 import classes from '../../../styles/home/InfoCard.module.css';
 
 interface cardInfo {
     cardTitle:string,
-    cardDescription:string
+    cardDescription:string,
+    iconName:string
 }
 
 
-export function InfoCard({cardTitle, cardDescription}: cardInfo) {
+
+export function InfoCard({cardTitle, cardDescription, iconName}: cardInfo) {
+    // map of icon components
+    const iconMap = {
+        laptop: <IconDeviceLaptop size={28} stroke={1.5} />,
+        certificate: <IconCertificate size={28} stroke={1.5} />
+    }
+
     return (
         <Paper withBorder radius="md" className={classes.card}>
             <ThemeIcon
@@ -17,7 +25,7 @@ export function InfoCard({cardTitle, cardDescription}: cardInfo) {
                 variant="gradient"
                 gradient={{ deg: 0, from: 'pink', to: 'orange' }}
             >
-                <IconColorSwatch size={28} stroke={1.5} />
+                {iconMap[iconName]}
             </ThemeIcon>
             <Text size="xl" fw={500} mt="md">
                 {cardTitle}
