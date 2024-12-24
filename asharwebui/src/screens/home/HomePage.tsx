@@ -4,11 +4,13 @@ import {InfoCard} from "./home-components/InfoCard.tsx";
 import {Hobbies} from "./home-components/Hobbies.tsx";
 import classes from "../../styles/home/Hobbies.module.css";
 import {Text} from "@mantine/core";
+import GithubGraph from "./home-components/GithubGraph.tsx";
 
 export default function Home(){
     return (
         <>
             <MainHeader/>
+            <GithubGraph/>
 
             {/*this is UT/UTD/Side project*/}
             <div style={{display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px', marginBottom: '100px'}}>

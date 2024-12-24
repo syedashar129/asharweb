@@ -16,7 +16,9 @@
     "@mantinex/mantine-logo": "^1.1.0",
     "@tabler/icons-react": "^3.24.0",
     "react": "^18.3.1",
+    "react-contribution-calendar": "^1.5.3",
     "react-dom": "^18.3.1",
+    "react-github-calendar": "^4.5.2",
     "react-router-dom": "^7.0.2"
   },
   "devDependencies": {
