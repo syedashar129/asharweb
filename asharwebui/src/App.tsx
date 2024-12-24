@@ -4,7 +4,7 @@ import {Route, Routes} from "react-router-dom";
 import Home from "./screens/home/HomePage.tsx";
 import Projects from "./screens/projects/Projects.tsx";
 import Blog from "./screens/blog/Blog.tsx";
-import AboutMe from "./screens/aboutme/AboutMe.tsx";
+import ContactMe from "./screens/contact/ContactMe.tsx";
 
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
             <Route path={'/'} element={<Home/>}/>
             <Route path={'/projects'} element={<Projects/>}/>
             <Route path={'/blog'} element={<Blog/>}/>
-            <Route path={'/aboutme'} element={<AboutMe/>}/>
+            <Route path={'/contact'} element={<ContactMe/>}/>
         </Routes>
 
 

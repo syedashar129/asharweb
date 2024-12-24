@@ -15,7 +15,7 @@ const links = [
     {
         label: 'About Me',
         links: [
-            { link: '/whoami', label: 'Who am I?', type:''},
+            { link: '/contact', label: 'Contact Me', type:''},
             { link: '/resume.pdf', label: 'Download Resume', type:'download'},
         ],
     },
