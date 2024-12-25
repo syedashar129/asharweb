@@ -44,6 +44,7 @@ export function Hobbies() {
     return (
         <Container size={700} className={classes.wrapper}>
             <Text className={classes.supTitle}>Syed's Hobbies</Text>
+            <br/>
 
             <Title className={classes.title} order={2}>
                 Beyond Code - <span className={classes.highlight}>What do I do?</span>

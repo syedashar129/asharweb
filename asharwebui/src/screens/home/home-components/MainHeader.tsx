@@ -39,8 +39,8 @@ export function MainHeader() {
                     </List>
 
                     <Group mt={30}>
-                        <Link to={'/contact'}>
-                            <Button radius="xl" size="md" className={classes.control}>Learn More About Me</Button>
+                        <Link to={'/projects'}>
+                            <Button radius="xl" size="md" className={classes.control}>Check My Projects</Button>
                         </Link>
 
                         <Link to={'/contact'}>
