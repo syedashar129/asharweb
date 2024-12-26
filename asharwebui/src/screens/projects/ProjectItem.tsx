@@ -1,54 +1,77 @@
-import { IconBookmark, IconHeart, IconShare } from '@tabler/icons-react';
-import {
-    ActionIcon,
-    Avatar,
-    Badge,
-    Card,
-    Group,
-    Image,
-    Text,
-    useMantineTheme,
-} from '@mantine/core';
+import { IconHeart } from '@tabler/icons-react';
+import { ActionIcon, Badge, Button, Card, Group, Image, Text } from '@mantine/core';
 import classes from '../../styles/projects/ProjectItem.module.css';
 
-export function ProjectItem({
-    tags, title, githubLink, image, desciption
-                            }
-) {
-    const theme = useMantineTheme();
+interface projectItems {
+    projTitle: string,
+    type: string,
+    projDescription: string,
+    badges: {emoji: string, label: string}[],
+    imgSrc: string,
+    githubLink: string
+}
+
+// const mockdata = {
+//     image: {imageSrc},
+//     title: 'Verudela Beach',
+//     country: 'Croatia',
+//     description:
+//         'Completely renovated for the season 2020, Arena Verudela Bech Apartments are fully equipped and modernly furnished 4-star self-service apartments located on the Adriatic coastline by one of the most beautiful beaches in Pula.',
+//     badges: [
+//         { emoji: '☀️', label: 'Sunny weather' },
+//         { emoji: '🦓', label: 'Onsite zoo' },
+//         { emoji: '🌊', label: 'Sea' },
+//         { emoji: '🌲', label: 'Nature' },
+//         { emoji: '🤽', label: 'Water sports' },
+//     ],
+// };
+
+export function ProjectItem({projTitle, type, projDescription, badges, imgSrc, githubLink}: projectItems) {
+    const features = badges.map((badge) => (
+        <Badge variant="light" key={badge.label} leftSection={badge.emoji}>
+            {badge.label}
+        </Badge>
+    ));
 
     return (
-        <Card withBorder padding="lg" radius="md" className={classes.card}>
-            <Card.Section mb="sm">
-                <Image
-                    src="https://images.unsplash.com/photo-1477554193778-9562c28588c0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
-                    alt="Top 50 underrated plants for house decoration"
-                    height={180}
-                />
+        <Card withBorder radius="md" p="md" className={classes.card}>
+            <Card.Section>
+                <Image src={imgSrc} alt={projTitle} height={180} />
             </Card.Section>
 
-            <Badge w="fit-content" variant="light">
-                decorations
-            </Badge>
-
-            <Text fw={700} className={classes.title} mt="xs">
-                Top 50 underrated plants for house decoration
-            </Text>
-
-            <Group mt="lg">
-                <Avatar
-                    src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/avatars/avatar-7.png"
-                    radius="sm"
-                />
-                <div>
-                    <Text fw={700}>Syed Ashar</Text>
-                    <Text fz="xs" c="dimmed">
-                        posted 34 minutes ago
+            <Card.Section className={classes.section} mt="md">
+                <Group justify="apart">
+                    <Text fz="lg" fw={500}>
+                        {projTitle}
                     </Text>
-                </div>
+                    <Badge size="sm" variant="light">
+                        {type}
+                    </Badge>
+                </Group>
+                <Text fz="sm" mt="xs">
+                    {projDescription}
+                </Text>
+            </Card.Section>
+
+            <Card.Section className={classes.section}>
+                {/*<Text mt="md" className={classes.label} c="dimmed">*/}
+                {/*    Perfect for you, if you enjoy*/}
+                {/*</Text>*/}
+                <Group gap={7} mt={5}>
+                    {features}
+                </Group>
+            </Card.Section>
+
+            <Group mt="xs">
+                <a href={githubLink} target={'_blank'}>
+                <Button radius="md" style={{ flex: 1 }}>
+                    Show details
+                </Button>
+                </a>
+                <ActionIcon variant="default" radius="md" size={36}>
+                    <IconHeart className={classes.like} stroke={1.5} />
+                </ActionIcon>
             </Group>
-
-
         </Card>
     );
 }
