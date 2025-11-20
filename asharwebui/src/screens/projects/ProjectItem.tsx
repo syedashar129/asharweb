@@ -6,27 +6,12 @@ interface projectItems {
     projTitle: string,
     type: string,
     projDescription: string,
-    badges: {emoji: string, label: string}[],
+    badges: { emoji: string, label: string }[],
     imgSrc: string,
     githubLink: string
 }
 
-// const mockdata = {
-//     image: {imageSrc},
-//     title: 'Verudela Beach',
-//     country: 'Croatia',
-//     description:
-//         'Completely renovated for the season 2020, Arena Verudela Bech Apartments are fully equipped and modernly furnished 4-star self-service apartments located on the Adriatic coastline by one of the most beautiful beaches in Pula.',
-//     badges: [
-//         { emoji: '☀️', label: 'Sunny weather' },
-//         { emoji: '🦓', label: 'Onsite zoo' },
-//         { emoji: '🌊', label: 'Sea' },
-//         { emoji: '🌲', label: 'Nature' },
-//         { emoji: '🤽', label: 'Water sports' },
-//     ],
-// };
-
-export function ProjectItem({projTitle, type, projDescription, badges, imgSrc, githubLink}: projectItems) {
+export function ProjectItem({ projTitle, type, projDescription, badges, imgSrc, githubLink }: projectItems) {
     const features = badges.map((badge) => (
         <Badge variant="light" key={badge.label} leftSection={badge.emoji}>
             {badge.label}
@@ -34,13 +19,13 @@ export function ProjectItem({projTitle, type, projDescription, badges, imgSrc, g
     ));
 
     return (
-        <Card withBorder radius="md" p="md" className={classes.card}>
+        <Card withBorder radius="xl" p="md" className={classes.card}>
             <Card.Section>
                 <Image src={imgSrc} alt={projTitle} height={180} />
             </Card.Section>
 
             <Card.Section className={classes.section} mt="md">
-                <Group justify="apart">
+                <Group justify="space-between">
                     <Text fz="lg" fw={500}>
                         {projTitle}
                     </Text>
@@ -54,21 +39,24 @@ export function ProjectItem({projTitle, type, projDescription, badges, imgSrc, g
             </Card.Section>
 
             <Card.Section className={classes.section}>
-                {/*<Text mt="md" className={classes.label} c="dimmed">*/}
-                {/*    Perfect for you, if you enjoy*/}
-                {/*</Text>*/}
                 <Group gap={7} mt={5}>
                     {features}
                 </Group>
             </Card.Section>
 
             <Group mt="xs">
-                <a href={githubLink} target={'_blank'}>
-                <Button radius="md" style={{ flex: 1 }}>
-                    Show details
-                </Button>
-                </a>
-                <ActionIcon variant="default" radius="md" size={36}>
+                {githubLink ? (
+                    <a href={githubLink} target={'_blank'} style={{ flex: 1 }}>
+                        <Button radius="xl" fullWidth>
+                            Show details
+                        </Button>
+                    </a>
+                ) : (
+                    <Button radius="xl" style={{ flex: 1 }} disabled>
+                        No Link Available
+                    </Button>
+                )}
+                <ActionIcon variant="default" radius="xl" size={36}>
                     <IconHeart className={classes.like} stroke={1.5} />
                 </ActionIcon>
             </Group>

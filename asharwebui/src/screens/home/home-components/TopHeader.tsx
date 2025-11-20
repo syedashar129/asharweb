@@ -1,8 +1,8 @@
 import { IconChevronDown } from '@tabler/icons-react';
-import {Burger, Center, Container, Group, Menu, Title} from '@mantine/core';
+import { Burger, Center, Container, Group, Menu, Title, Drawer, Stack } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import classes from '../../../styles/home/TopHeader.module.css';
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import { ThemeToggle } from '../../../components/ThemeToggle';
 import GithubLogo from '../../../components/GithubLogo';
 import LinkedinLogo from '../../../components/LinkedinLogo';
@@ -15,8 +15,8 @@ const links = [
     {
         label: 'About Me',
         links: [
-            { link: '/contact', label: 'Contact Me', type:''},
-            { link: '/resume.pdf', label: 'Download Resume', type:'download'},
+            { link: '/contact', label: 'Contact Me', type: '' },
+            { link: '/resume.pdf', label: 'Download Resume', type: 'download' },
         ],
     },
 ];
@@ -28,9 +28,9 @@ export function TopHeader() {
         const menuItems = link.links?.map((item) => (
             // each item here is the subtitles
             <Menu.Item key={item.link}>
-                {item.type === 'download' ? 
-                    <a href={item.link}download='Syed_Ashar_Resume.pdf' className={classes.link}>{item.label}</a>
-                     
+                {item.type === 'download' ?
+                    <a href={item.link} download='Syed_Ashar_Resume.pdf' className={classes.link}>{item.label}</a>
+
                     :
 
                     <Link to={item.link} key={item.label} className={classes.link}>
@@ -85,15 +85,57 @@ export function TopHeader() {
                     </Group>
 
                     <Burger opened={opened} onClick={toggle} size="sm" hiddenFrom="sm" />
-                    
+
                     <Group gap={5} visibleFrom="sm">
-                        <ThemeToggle/>
-                        <GithubLogo/>
-                        <LinkedinLogo/>
+                        <ThemeToggle />
+                        <GithubLogo />
+                        <LinkedinLogo />
                     </Group>
-                
+
+                    <Drawer
+                        opened={opened}
+                        onClose={toggle}
+                        size="100%"
+                        padding="md"
+                        title="Navigation"
+                        hiddenFrom="sm"
+                        zIndex={1000000}
+                    >
+                        <Stack gap="md">
+                            {links.map((link) => {
+                                if (link.links) {
+                                    return link.links.map((subLink) => (
+                                        <Link
+                                            key={subLink.label}
+                                            to={subLink.link}
+                                            className={classes.link}
+                                            onClick={toggle}
+                                        >
+                                            {subLink.label}
+                                        </Link>
+                                    ));
+                                }
+                                return (
+                                    <Link
+                                        key={link.label}
+                                        to={link.link}
+                                        className={classes.link}
+                                        onClick={toggle}
+                                    >
+                                        {link.label}
+                                    </Link>
+                                );
+                            })}
+                            <Group justify="center" mt="xl">
+                                <ThemeToggle />
+                                <GithubLogo />
+                                <LinkedinLogo />
+                            </Group>
+                        </Stack>
+                    </Drawer>
+
                 </div>
-                    
+
             </Container>
         </header>
     );

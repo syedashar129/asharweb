@@ -1,25 +1,25 @@
 import { Container, SimpleGrid, Text, ThemeIcon, Title } from '@mantine/core';
 import classes from '../../../styles/home/Hobbies.module.css';
-import {IconBallAmericanFootball, IconMovie, IconRun, IconShoppingCart} from "@tabler/icons-react";
+import { IconBallAmericanFootball, IconMovie, IconRun, IconShoppingCart } from "@tabler/icons-react";
 
 const hobbies = [
     {
-        icon: <IconBallAmericanFootball size={30}/>,
+        icon: <IconBallAmericanFootball size={30} />,
         title: 'Sports',
         description: 'Grown and raised in Houston! Go Texans, Rockets, and Astros!',
     },
     {
-        icon: <IconMovie size={30}/>,
+        icon: <IconMovie size={30} />,
         title: 'Shows',
         description: 'Favorite shows include Ozark,Breaking Bad,The Office,and Silicon Valley',
     },
     {
-        icon: <IconShoppingCart size={30}/>,
+        icon: <IconShoppingCart size={30} />,
         title: 'Shopping',
-        description: 'Its my guilty pleasure, but I often spend time window shopping for things I dont need :)',
+        description: 'It is my guilty pleasure, but I often spend time shopping  for things I dont need :)',
     },
     {
-        icon: <IconRun size={30}/>,
+        icon: <IconRun size={30} />,
         title: 'Others',
         description: 'Strong liking to pickleball and other paddle sports, Love running/walking and trying to be consistent in weight lifting.',
     },
@@ -27,8 +27,8 @@ const hobbies = [
 
 export function Hobbies() {
     const items = hobbies.map((item) => (
-        <div className={classes.item} key={item.icon}>
-            <ThemeIcon variant="light" className={classes.itemIcon} size={60} radius="md">
+        <div className={classes.item} key={item.title}>
+            <ThemeIcon variant="light" className={classes.itemIcon} size={60} radius="xl">
                 {item.icon}
             </ThemeIcon>
 
@@ -44,7 +44,7 @@ export function Hobbies() {
     return (
         <Container size={700} className={classes.wrapper}>
             <Text className={classes.supTitle}>Syed's Hobbies</Text>
-            <br/>
+            <br />
 
             <Title className={classes.title} order={2}>
                 Beyond Code - <span className={classes.highlight}>What do I do?</span>

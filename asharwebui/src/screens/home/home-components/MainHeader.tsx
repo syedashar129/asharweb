@@ -1,7 +1,8 @@
 import { IconCheck } from '@tabler/icons-react';
 import { Button, Container, Group, Image, List, Text, ThemeIcon, Title } from '@mantine/core';
+import { Link } from "react-router-dom";
+import profileImg from '../../../assets/syed_ashar_grad_photo.jpg';
 import classes from '../../../styles/home/MainHeader.module.css';
-import {Link} from "react-router-dom";
 
 export function MainHeader() {
     return (
@@ -12,7 +13,7 @@ export function MainHeader() {
                         Hi I'm <span className={classes.highlight}>Syed Ashar</span> <br /> Software Engineer
                     </Title>
                     <Text c="dimmed" mt="md">
-                        I am a 22-year-old full-time software engineer with 1.5 years of experience. I am
+                        I am a full-time software engineer with over 2 years of experience. I am
                         passionate about web development and data, and I’m always eager to take on new challenges and contribute
                         to meaningful projects.
                     </Text>
@@ -50,7 +51,7 @@ export function MainHeader() {
                         </Link>
                     </Group>
                 </div>
-                <Image src={'/profile_image.jpeg'} className={classes.image} />
+                <Image src={profileImg} className={classes.image} />
             </div>
         </Container>
     );
