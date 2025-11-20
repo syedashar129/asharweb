@@ -51,7 +51,7 @@ export function MainHeader() {
                         </Link>
                     </Group>
                 </div>
-                <Image src={profileImg} className={classes.image} />
+                <Image src={profileImg} className={classes.image} radius="50%" />
             </div>
         </Container>
     );

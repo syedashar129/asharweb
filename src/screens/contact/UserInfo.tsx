@@ -1,6 +1,7 @@
 import { IconAt } from '@tabler/icons-react';
 import { Avatar, Group, Text } from '@mantine/core';
 import classes from '../../styles/aboutme/UserInfo.module.css';
+import profileImg from '../../assets/syed_ashar_grad_photo.jpg';
 
 interface userProps {
     title: string,
@@ -13,9 +14,9 @@ export function UserInfo({title, name, email}:userProps) {
         <div>
             <Group wrap="nowrap">
                 <Avatar
-                    src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/avatars/avatar-2.png"
+                    src={profileImg}
                     size={94}
-                    radius="md"
+                    radius="50%"
                 />
                 <div>
                     <Text fz="xs" tt="uppercase" fw={700} c="dimmed">
