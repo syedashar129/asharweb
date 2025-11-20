@@ -1,4 +1,4 @@
-import { IconAt, IconPhoneCall } from '@tabler/icons-react';
+import { IconAt } from '@tabler/icons-react';
 import { Avatar, Group, Text } from '@mantine/core';
 import classes from '../../styles/aboutme/UserInfo.module.css';
 

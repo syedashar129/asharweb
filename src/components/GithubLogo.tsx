@@ -1,28 +1,23 @@
 import React from 'react';
-import { ActionIcon, useMantineTheme } from '@mantine/core';
+import { ActionIcon, useMantineTheme, useMantineColorScheme } from '@mantine/core';
 import { IconBrandGithub } from '@tabler/icons-react';
 
 const GithubLogo: React.FC = () => {
   const theme = useMantineTheme();
+  const { colorScheme } = useMantineColorScheme();
+  const isDark = colorScheme === 'dark';
 
   return (
     <ActionIcon
-      variant="default" 
-      size="xl" 
-      sx={{
-        backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : '#fff',
-        '&:hover': {
-          backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[0],
-        },
-      }} // this is for the circle background in the github logo
+      variant="default"
+      size="xl"
+      style={{ backgroundColor: isDark ? theme.colors.dark[6] : '#fff' }}
       component="a"
-      href="https://github.com/syedashar129" 
+      href="https://github.com/syedashar129"
       target="_blank"
       rel="noopener noreferrer"
     >
-      <IconBrandGithub
-        size={20} 
-      />
+      <IconBrandGithub size={20} />
     </ActionIcon>
   );
 };

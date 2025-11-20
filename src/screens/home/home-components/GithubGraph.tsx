@@ -1,4 +1,5 @@
-import {useMantineColorScheme, useMantineTheme} from "@mantine/core";
+import React from 'react';
+import { useMantineColorScheme } from "@mantine/core";
 import GitHubCalendar from "react-github-calendar";
 
 
@@ -6,7 +7,7 @@ export default function GithubGraph(){
     const {colorScheme} = useMantineColorScheme();
     const isDark = colorScheme === 'dark';
 
-    const calendarStyles = {
+    const calendarStyles: React.CSSProperties = {
         backgroundColor: 'transparent',
         maxWidth: '100%',
         overflowX: 'auto',

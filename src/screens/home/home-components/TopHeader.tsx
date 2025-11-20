@@ -46,7 +46,7 @@ export function TopHeader() {
                 <Menu key={link.label} trigger="hover" transitionProps={{ exitDuration: 0 }} withinPortal>
                     <Menu.Target>
                         <a
-                            href={link.link}
+                            href={link.link ?? '#'}
                             className={classes.link}
                             onClick={(event) => event.preventDefault()}
                         >
@@ -64,7 +64,7 @@ export function TopHeader() {
         return (
             <Link
                 key={link.label}
-                to={link.link}
+                to={link.link ?? '/'}
                 className={classes.link}
             >
                 {link.label}
@@ -107,7 +107,7 @@ export function TopHeader() {
                                     return link.links.map((subLink) => (
                                         <Link
                                             key={subLink.label}
-                                            to={subLink.link}
+                                            to={subLink.link ?? '/'}
                                             className={classes.link}
                                             onClick={toggle}
                                         >
