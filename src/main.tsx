@@ -29,7 +29,7 @@ createRoot(document.getElementById('root')!).render(
             }}
             defaultColorScheme="dark"
         >
-            <BrowserRouter basename={import.meta.env.BASE_URL}>
+            <BrowserRouter basename="/asharweb">
                 <App />
             </BrowserRouter>
         </MantineProvider>
