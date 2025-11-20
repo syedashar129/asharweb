@@ -5,7 +5,7 @@ import Home from "./screens/home/HomePage.tsx";
 import Projects from "./screens/projects/Projects.tsx";
 import Blog from "./screens/blog/Blog.tsx";
 import Contact from "./screens/contact/Contact.tsx";
-import { BackgroundAnimation } from "./components/BackgroundAnimation";
+import { BackgroundAnimation } from "./components/BackgroundAnimation.tsx";
 
 
 function App() {
