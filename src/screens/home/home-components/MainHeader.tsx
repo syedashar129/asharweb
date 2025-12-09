@@ -16,9 +16,10 @@ export function MainHeader() {
             <div className={classes.inner}>
                 <div className={classes.content}>
                     <Title className={classes.title}>
-                        Hi I'm <span className={classes.highlight}>Syed Ashar</span> <br /> Software Engineer
+                        Hi I'm <span className={classes.highlight}>Syed Ashar</span> <br /> 
+                        <span className={classes.subtitle}>Software Engineer</span>
                     </Title>
-                    <Text c="dimmed" mt="md">
+                    <Text c="dimmed" mt="md" size="lg" fw={400}>
                         I am a full-time software engineer with over 2 years of experience. I am
                         passionate about web development and data, and I'm always eager to take on new challenges and contribute
                         to meaningful projects.

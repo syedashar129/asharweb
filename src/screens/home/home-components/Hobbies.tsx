@@ -43,13 +43,8 @@ export function Hobbies() {
 
     return (
         <Container size={700} className={classes.wrapper}>
-            <Text className={classes.supTitle}>Syed's Hobbies</Text>
-            <br />
-
-            <Title className={classes.title} order={2}>
-                Beyond Code - <span className={classes.highlight}>What do I do?</span>
-            </Title>
-
+            <Title mb="xl" className="gradient-text" size="h1" fw={900} ta="center">Hobbies</Title>
+            
             <Container size={660} p={0}>
                 <Text c="dimmed" className={classes.description}>
                     I’m passionate about coding and tech, but I also love exploring other interests.

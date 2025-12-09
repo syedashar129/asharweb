@@ -85,7 +85,7 @@ export default function Projects() {
 
     return (
         <Container size="xl" py="xl">
-            <Title mb="xl">Projects</Title>
+            <Title mb="xl" className="gradient-text" size="h1" fw={900}>Projects</Title>
             <SimpleGrid cols={{ base: 1, sm: 2, md: 3 }} spacing="lg">
                 {projects.map((project, index) => (
                     <ProjectItem

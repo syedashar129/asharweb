@@ -47,6 +47,7 @@
   padding: 4rem 0;
   scroll-margin-top: 80px; /* Account for fixed header */
   position: relative;
+  animation: fadeInUp 0.6s ease-out;
 }
 
 .page-section:first-of-type {
@@ -61,4 +62,246 @@
 /* Smooth scrolling for the entire page */
 html {
   scroll-behavior: smooth;
+}
+
+/* Modern gradient blue backgrounds */
+.page-section {
+  position: relative;
+}
+
+.page-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #667eea, #764ba2, transparent);
+  opacity: 0.3;
+}
+
+/* Gradient text utilities - Subtle Blue */
+.gradient-text {
+  background: linear-gradient(135deg, #93c5fd 0%, #3b82f6 50%, #60a5fa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 200% 200%;
+  animation: gradientShift 8s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Modern contrast text */
+.contrast-text {
+  color: light-dark(var(--mantine-color-gray-9), var(--mantine-color-gray-0));
+  font-weight: 700;
+}
+
+.contrast-highlight {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 900;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Enhanced card hover effects */
+[class*="Card"] {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, box-shadow;
+}
+
+[class*="Card"]:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Button enhancements */
+button, [role="button"], a[class*="Button"] {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+button:hover, [role="button"]:hover, a[class*="Button"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+button:active, [role="button"]:active, a[class*="Button"]:active {
+  transform: translateY(0);
+}
+
+/* Badge hover effects */
+[class*="Badge"] {
+  transition: all 0.3s ease;
+}
+
+[class*="Badge"]:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Image hover effects */
+img {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+img:hover {
+  transform: scale(1.05);
+}
+
+/* Smooth divider animations */
+[class*="Divider"] {
+  animation: fadeIn 0.8s ease-out;
+}
+
+/* Text animations */
+h1, h2, h3, h4, h5, h6 {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Link hover effects */
+a {
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background: currentColor;
+  transition: width 0.3s ease;
+}
+
+a:hover::after {
+  width: 100%;
+}
+
+/* Glassmorphism effect for cards */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Gradient text animation */
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.gradient-text {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient 15s ease infinite;
+}
+
+/* Scroll reveal animation */
+@keyframes scrollReveal {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.scroll-reveal {
+  animation: scrollReveal 0.8s ease-out;
+}
+
+/* Loading shimmer effect */
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
 }

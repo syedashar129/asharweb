@@ -2,7 +2,15 @@
     height: 56px;
     margin-bottom: 10px;
     background-color: var(--mantine-color-body);
-    border-bottom: 1px solid light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
+    border-bottom: 2px solid;
+    border-image: linear-gradient(90deg, transparent, #3b82f6, #93c5fd, transparent) 1;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+    background-color: rgba(var(--mantine-color-body-rgb), 0.9);
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 20px rgba(59, 130, 246, 0.1);
 }
 
 .inner {
@@ -21,12 +29,60 @@
     color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-0));
     font-size: var(--mantine-font-size-sm);
     font-weight: 500;
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+            135deg,
+            rgba(59, 130, 246, 0.1),
+            rgba(147, 51, 234, 0.1)
+        );
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        border-radius: var(--mantine-radius-xl);
+    }
 
     @mixin hover {
         background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-6));
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    @mixin hover::before {
+        opacity: 1;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(
+            90deg,
+            var(--mantine-color-blue-6),
+            var(--mantine-color-purple-6)
+        );
+        transition: all 0.3s ease;
+        transform: translateX(-50%);
+    }
+
+    @mixin hover::after {
+        width: 80%;
     }
 }
 
 .linkLabel {
     margin-right: 5px;
+    position: relative;
+    z-index: 1;
 }

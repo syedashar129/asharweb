@@ -7,7 +7,7 @@ export default function Blog(){
 
     return (
         <Stack gap="md">
-            <Title mb="sm">Blog</Title>
+            <Title mb="sm" className="gradient-text" size="h1" fw={900}>Blog</Title>
             <TableOfContents/>
             <HomeBlogCard/>
         </Stack>

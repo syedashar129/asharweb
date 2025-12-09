@@ -7,6 +7,7 @@ export function ContactInfo() {
       <Title
         order={2}
         size="h1"
+        className="gradient-text"
         style={{ fontFamily: 'Greycliff CF, var(--mantine-font-family)' }}
         fw={900}
         ta="center"
@@ -25,6 +26,10 @@ export function ContactInfo() {
           leftSection={<IconMail size={18} />}
           size="lg"
           variant="filled"
+          style={{
+            background: 'linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)',
+            border: 'none',
+          }}
         >
           Email Me
         </Button>
@@ -37,6 +42,10 @@ export function ContactInfo() {
           leftSection={<IconBrandLinkedin size={18} />}
           size="lg"
           variant="outline"
+          style={{
+            borderColor: '#3b82f6',
+            color: '#3b82f6',
+          }}
         >
           LinkedIn
         </Button>
