@@ -6,22 +6,22 @@ const hobbies = [
     {
         icon: <IconBallAmericanFootball size={30} />,
         title: 'Sports',
-        description: 'Grown and raised in Houston! Go Texans, Rockets, and Astros!',
+        description: 'Born and raised in Houston! Proud supporter of the Texans, Rockets, and Astros.',
     },
     {
         icon: <IconMovie size={30} />,
-        title: 'Shows',
-        description: 'Favorite shows include Ozark,Breaking Bad,The Office,and Silicon Valley',
+        title: 'Entertainment',
+        description: 'Enjoy watching shows like Ozark, Breaking Bad, The Office, and Silicon Valley in my free time.',
     },
     {
         icon: <IconShoppingCart size={30} />,
         title: 'Shopping',
-        description: 'It is my guilty pleasure, but I often spend time shopping  for things I dont need :)',
+        description: 'I enjoy exploring new products and staying updated with the latest tech and fashion trends.',
     },
     {
         icon: <IconRun size={30} />,
-        title: 'Others',
-        description: 'Strong liking to pickleball and other paddle sports, Love running/walking and trying to be consistent in weight lifting.',
+        title: 'Fitness',
+        description: 'Active in pickleball and other paddle sports. I maintain a regular routine of running, walking, and weightlifting.',
     },
 ];
 
@@ -46,10 +46,10 @@ export function Hobbies() {
             <Title mb="xl" className="gradient-text" size="h1" fw={900} ta="center">Hobbies</Title>
             
             <Container size={660} p={0}>
-                <Text c="dimmed" className={classes.description}>
-                    I’m passionate about coding and tech, but I also love exploring other interests.
-                    I’m a big football and basketball fan, and watching shows, movies, or anime is my go-to way to relax.
-                    Lately, I’ve been diving into learning more about stocks and personal finance—it’s been exciting to pick up new skills in that area!
+                <Text c="dimmed" className={classes.description} ta="center">
+                    While I'm passionate about software engineering and technology, I also value maintaining a well-rounded lifestyle. 
+                    I'm an avid sports fan, enjoy quality entertainment, and stay active through various fitness activities. 
+                    I'm also continuously learning about personal finance and investment strategies to expand my knowledge beyond technology.
                 </Text>
             </Container>
 

@@ -24,14 +24,14 @@ function App() {
         </Container>
       </section>
 
-      <Divider size="md" my="xl" />
+      <Divider size="sm" my="xl" variant="dashed" />
 
       {/* Projects Section */}
       <section id="projects" className="page-section">
         <Projects />
       </section>
 
-      <Divider size="md" my="xl" />
+      <Divider size="sm" my="xl" variant="dashed" />
 
       {/* Blog Section */}
       <section id="blog" className="page-section">
@@ -40,7 +40,7 @@ function App() {
         </Container>
       </section>
 
-      <Divider size="md" my="xl" />
+      <Divider size="sm" my="xl" variant="dashed" />
 
       {/* Hobbies Section */}
       <section id="hobbies" className="page-section">
@@ -49,7 +49,7 @@ function App() {
         </Container>
       </section>
 
-      <Divider size="md" my="xl" />
+      <Divider size="sm" my="xl" variant="dashed" />
 
       {/* Contact Section */}
       <section id="contact" className="page-section">

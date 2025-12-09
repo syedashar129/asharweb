@@ -1,16 +1,13 @@
 .header {
     height: 56px;
     margin-bottom: 10px;
-    background-color: var(--mantine-color-body);
-    border-bottom: 2px solid;
-    border-image: linear-gradient(90deg, transparent, #3b82f6, #93c5fd, transparent) 1;
+    background-color: rgba(var(--mantine-color-body-rgb), 0.8);
     position: sticky;
     top: 0;
     z-index: 100;
     backdrop-filter: blur(10px);
-    background-color: rgba(var(--mantine-color-body-rgb), 0.9);
     transition: all 0.3s ease;
-    box-shadow: 0 2px 20px rgba(59, 130, 246, 0.1);
+    border-bottom: none;
 }
 
 .inner {

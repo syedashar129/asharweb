@@ -78,12 +78,13 @@
 }
 
 .control {
-    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
-    border: none;
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.3);
     transition: all 0.3s ease;
     
     &:hover {
-        background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+        background: rgba(59, 130, 246, 0.2);
+        border-color: rgba(59, 130, 246, 0.5);
         transform: translateY(-2px);
         box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
     }
@@ -91,6 +92,23 @@
     @media (max-width: $mantine-breakpoint-xs) {
         flex: 1;
     }
+}
+
+.controlText {
+    color: white;
+    font-weight: 600;
+}
+
+.checkmarkThemeIcon {
+    background: linear-gradient(135deg, #93c5fd 0%, #3b82f6 50%, #60a5fa 100%);
+    background-size: 200% 200%;
+    animation: gradientShift 8s ease infinite;
+    border: none;
+}
+
+.checkmarkIcon {
+    color: white;
+    stroke: white;
 }
 
 .image {

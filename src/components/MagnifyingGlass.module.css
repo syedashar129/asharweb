@@ -1,2 +1,74 @@
-/* Magnifying glass component removed */
+/* Magnifying glass effect - creates a zoomed viewport */
+.magnifyingGlass {
+    position: fixed;
+    width: 150px;
+    height: 150px;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate3d(-50%, -50%, 0);
+    opacity: 0;
+    border-radius: 50%;
+    border: 2px solid rgba(59, 130, 246, 0.3);
+    box-shadow: 
+        0 0 30px rgba(59, 130, 246, 0.2),
+        inset 0 0 30px rgba(59, 130, 246, 0.1);
+    background: radial-gradient(
+        circle at center,
+        rgba(255, 255, 255, 0.05) 0%,
+        transparent 70%
+    );
+    backdrop-filter: blur(0px);
+    will-change: transform, opacity;
+    transition: opacity 0.2s ease, transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), width 0.2s ease, height 0.2s ease;
+    overflow: hidden;
+    /* Use hardware acceleration */
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
 
+/* Create the magnified view effect */
+.magnifyingGlass::before {
+    content: '';
+    position: absolute;
+    top: -25%;
+    left: -25%;
+    width: 150%;
+    height: 150%;
+    background: inherit;
+    transform: scale(1.2);
+    pointer-events: none;
+    filter: brightness(1.1) contrast(1.1);
+}
+
+.magnifyingGlass.visible {
+    opacity: 0; /* Hidden by default, only visible on hover */
+}
+
+/* Only show when hovering interactive elements */
+.magnifyingGlass.hovering {
+    opacity: 1;
+    width: 180px;
+    height: 180px;
+    transform: translate3d(-50%, -50%, 0) scale(1.1);
+    border-color: rgba(59, 130, 246, 0.6);
+    background: radial-gradient(
+        circle at center,
+        rgba(255, 255, 255, 0.1) 0%,
+        rgba(59, 130, 246, 0.05) 100%
+    );
+    backdrop-filter: blur(1px) brightness(1.2);
+}
+
+/* Hide on mobile devices */
+@media (max-width: 768px) {
+    .magnifyingGlass {
+        display: none;
+    }
+}
+
+/* Reduce effect on lower-end devices */
+@media (prefers-reduced-motion: reduce) {
+    .magnifyingGlass {
+        display: none;
+    }
+}

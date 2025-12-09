@@ -16,33 +16,33 @@ export function MainHeader() {
             <div className={classes.inner}>
                 <div className={classes.content}>
                     <Title className={classes.title}>
-                        Hi I'm <span className={classes.highlight}>Syed Ashar</span> <br /> 
+                        Hello, I'm <span className={classes.highlight}>Syed Ashar</span> <br /> 
                         <span className={classes.subtitle}>Software Engineer</span>
                     </Title>
-                    <Text c="dimmed" mt="md" size="lg" fw={400}>
-                        I am a full-time software engineer with over 2 years of experience. I am
-                        passionate about web development and data, and I'm always eager to take on new challenges and contribute
-                        to meaningful projects.
+                    <Text c="dimmed" mt="md" size="lg" fw={400} lh={1.7}>
+                        Full-stack software engineer with 2+ years of experience building scalable enterprise applications. 
+                        Passionate about crafting elegant solutions to complex problems and delivering high-quality software 
+                        that drives business value.
                     </Text>
 
                     <List
                         mt={30}
-                        spacing="sm"
+                        spacing="md"
                         size="sm"
                         icon={
-                            <ThemeIcon size={20} radius="xl">
-                                <IconCheck size={12} stroke={1.5} />
+                            <ThemeIcon size={20} radius="xl" className={classes.checkmarkThemeIcon}>
+                                <IconCheck size={12} stroke={1.5} className={classes.checkmarkIcon} />
                             </ThemeIcon>
                         }
                     >
                         <List.Item>
-                            <b>Software Engineer</b> – JPMorganChase &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <b>Software Engineer</b> at JPMorgan Chase
                         </List.Item>
                         <List.Item>
-                            <b>Education</b> – Masters + Bachelors in CS &nbsp;&nbsp;
+                            <b>Education:</b> Master's & Bachelor's in Computer Science
                         </List.Item>
                         <List.Item>
-                            <b>Skills</b> – Springboot/React/Java/JS/Python
+                            <b>Tech Stack:</b> Spring Boot, React, Java, JavaScript, Python, AWS, Terraform
                         </List.Item>
                     </List>
 
@@ -53,7 +53,7 @@ export function MainHeader() {
                             className={classes.control}
                             onClick={() => scrollToSection('#projects')}
                         >
-                            Check My Projects
+                            <span className={classes.controlText}>View Projects</span>
                         </Button>
 
                         <Button 
@@ -63,7 +63,7 @@ export function MainHeader() {
                             className={classes.control}
                             onClick={() => scrollToSection('#contact')}
                         >
-                            Contact me
+                            <span className={classes.controlText}>Get In Touch</span>
                         </Button>
                     </Group>
                 </div>

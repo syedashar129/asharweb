@@ -7,7 +7,7 @@ export default function Projects() {
         {
             title: 'TikTok Automator',
             type: 'Automation Tool',
-            description: 'An automation tool that automates educational coding-related TikToks to a TikTok channel to help software developers learn and stay updated with the latest programming concepts and techniques.',
+            description: 'An intelligent automation platform that generates and publishes educational coding content to TikTok. Designed to help developers stay current with programming trends and best practices through automated content creation and distribution.',
             badges: [
                 { emoji: '🎬', label: 'TikTok API' },
                 { emoji: '🐍', label: 'Python' },
@@ -20,7 +20,7 @@ export default function Projects() {
         {
             title: 'TaskDo-Er',
             type: 'AI Agent',
-            description: 'An intelligent system that stores all questions about normal bills and budgeting. It uses RAG, LLM, and advanced AI techniques to answer any questions about passwords, deadlines, money, and other financial information. The system can also act as an autonomous agent to perform these tasks automatically.',
+            description: 'An intelligent financial management system leveraging RAG and LLM technologies to provide comprehensive answers about bills, budgeting, and financial data. Features autonomous agent capabilities to automatically manage financial tasks and deadlines.',
             badges: [
                 { emoji: '🧠', label: 'LLM' },
                 { emoji: '🔍', label: 'RAG' },
@@ -31,9 +31,9 @@ export default function Projects() {
             githubLink: ''
         },
         {
-            title: 'Real Estate Property Appreciation + Rent predictor',
+            title: 'Real Estate Property Appreciation + Rent Predictor',
             type: 'Web App',
-            description: 'An application that allows you to enter a house posting from Zillow/Redfin and see its projected growth over the next 5 years in terms of rent and house value. Provides comparisons based on region and latest trends using a scikit-learn prediction model.',
+            description: 'A predictive analytics platform that analyzes property listings from Zillow/Redfin to forecast rental income and property appreciation over 5 years. Utilizes scikit-learn machine learning models with regional trend analysis for accurate predictions.',
             badges: [
                 { emoji: '📚', label: 'React' },
                 { emoji: '📈', label: 'scikit-learn' },
@@ -46,7 +46,7 @@ export default function Projects() {
         {
             title: 'StockScope',
             type: 'AI Analysis Tool',
-            description: 'An AI-powered tool that provides deep insights into stocks based on their ticker. It extracts and analyzes financial data to give you a comprehensive "scope" of the stock\'s performance and potential.',
+            description: 'An AI-powered financial analysis platform that delivers comprehensive stock insights through advanced data extraction and analysis. Provides detailed performance metrics, trend analysis, and investment potential assessments for informed decision-making.',
             badges: [
                 { emoji: '🧠', label: 'AI/ML' },
                 { emoji: '🐍', label: 'Python' },
@@ -59,7 +59,7 @@ export default function Projects() {
         {
             title: 'FoodieConnect',
             type: 'Android Mobile App',
-            description: 'A mobile application connecting food lovers. Discover new places, share your culinary experiences, and connect with other foodies in your area.',
+            description: 'A social mobile application that connects food enthusiasts. Enables users to discover new restaurants, share culinary experiences, and build a community of food lovers in their local area.',
             badges: [
                 { emoji: '📱', label: 'Android' },
                 { emoji: '☕', label: 'Java' },
@@ -71,7 +71,7 @@ export default function Projects() {
         {
             title: 'Personal Website',
             type: 'Web App',
-            description: 'This website! A place to showcase my experience, projects, and skills. Built with modern web technologies for high performance and great aesthetics.',
+            description: 'A modern, responsive portfolio website showcasing professional experience, technical projects, and skills. Built with React, TypeScript, and Mantine UI for optimal performance and user experience.',
             badges: [
                 { emoji: '📚', label: 'React' },
                 { emoji: '🔐', label: 'Typescript' },

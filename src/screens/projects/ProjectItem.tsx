@@ -1,5 +1,4 @@
-import { IconHeart } from '@tabler/icons-react';
-import { ActionIcon, Badge, Button, Card, Group, Image, Text } from '@mantine/core';
+import { Badge, Button, Card, Group, Image, Text } from '@mantine/core';
 import classes from '../../styles/projects/ProjectItem.module.css';
 
 interface projectItems {
@@ -18,8 +17,22 @@ export function ProjectItem({ projTitle, type, projDescription, badges, imgSrc, 
         </Badge>
     ));
 
+    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+        const rect = e.currentTarget.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        e.currentTarget.style.setProperty('--x', `${x}px`);
+        e.currentTarget.style.setProperty('--y', `${y}px`);
+    };
+
     return (
-        <Card withBorder radius="xl" p="md" className={classes.card}>
+        <Card 
+            withBorder 
+            radius="xl" 
+            p="md" 
+            className={classes.card}
+            onMouseMove={handleMouseMove}
+        >
             <Card.Section>
                 <Image src={imgSrc} alt={projTitle} height={180} />
             </Card.Section>
@@ -46,19 +59,16 @@ export function ProjectItem({ projTitle, type, projDescription, badges, imgSrc, 
 
             <Group mt="xs">
                 {githubLink ? (
-                    <a href={githubLink} target={'_blank'} style={{ flex: 1 }}>
-                        <Button radius="xl" fullWidth>
-                            Show details
+                    <a href={githubLink} target="_blank" rel="noopener noreferrer" style={{ flex: 1 }}>
+                        <Button radius="xl" fullWidth variant="light">
+                            View on GitHub
                         </Button>
                     </a>
                 ) : (
-                    <Button radius="xl" style={{ flex: 1 }} disabled>
-                        No Link Available
+                    <Button radius="xl" style={{ flex: 1 }} variant="light" disabled>
+                        Private Repository
                     </Button>
                 )}
-                <ActionIcon variant="default" radius="xl" size={36}>
-                    <IconHeart className={classes.like} stroke={1.5} />
-                </ActionIcon>
             </Group>
         </Card>
     );

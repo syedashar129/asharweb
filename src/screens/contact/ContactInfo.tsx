@@ -15,8 +15,9 @@ export function ContactInfo() {
         Get in touch
       </Title>
 
-      <Text size="lg" c="dimmed" ta="center" maw={600}>
-        Feel free to reach out to me via email or LinkedIn. I'd love to hear from you!
+      <Text size="lg" c="dimmed" ta="center" maw={600} lh={1.7}>
+        I'm always open to discussing new opportunities, collaborations, or interesting projects. 
+        Feel free to reach out via email or LinkedIn—I'd be happy to connect!
       </Text>
 
       <Group justify="center" gap="md" mt="md">
