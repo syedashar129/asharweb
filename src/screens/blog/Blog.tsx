@@ -6,8 +6,8 @@ import {TableOfContents} from "./TableOfContents.tsx";
 export default function Blog(){
 
     return (
-        <Stack gap="xl">
-            <Title mb="md">Blog</Title>
+        <Stack gap="md">
+            <Title mb="sm">Blog</Title>
             <TableOfContents/>
             <HomeBlogCard/>
         </Stack>

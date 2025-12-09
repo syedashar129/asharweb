@@ -1,49 +1,34 @@
-import { useState } from 'react';
-import { IconListSearch } from '@tabler/icons-react';
-import cx from 'clsx';
-import { Box, Group, Text } from '@mantine/core';
-import classes from '../../styles/blog/TableOfContents.module.css'
+import { Badge, Group, Text } from '@mantine/core';
+import { IconBook } from '@tabler/icons-react';
 
-const links = [
-    { label: 'UTD Bachelors CS Blog', link: '#utd-bachelors', order: 1 },
-    { label: 'UT Austin Masters CS Blog', link: '#ut-austin-masters', order: 1 },
-    { label: 'Software Engineer Blog', link: '#software-engineer', order: 1 },
+const categories = [
+    { label: 'UTD Bachelors CS', link: '#utd-bachelors' },
+    { label: 'UT Austin Masters CS', link: '#ut-austin-masters' },
+    { label: 'Software Engineer', link: '#software-engineer' },
 ];
 
 export function TableOfContents() {
-    const [active, setActive] = useState(0);
-
-    const items = links.map((item, index) => (
-        <Box<'a'>
+    const items = categories.map((category) => (
+        <Badge
+            key={category.label}
             component="a"
-            href={item.link}
-            onClick={(event) => {
-                event.preventDefault();
-                setActive(index);
+            href={category.link}
+            onClick={(e) => {
+                e.preventDefault();
             }}
-            key={item.label}
-            className={cx(classes.link, { [classes.linkActive]: active === index })}
-            style={{ paddingLeft: `calc(${item.order} * var(--mantine-spacing-md))` }}
+            variant="light"
+            size="lg"
+            style={{ cursor: 'pointer' }}
         >
-            {item.label}
-        </Box>
+            {category.label}
+        </Badge>
     ));
 
     return (
-        <div className={classes.root}>
-            <Group mb="md">
-                <IconListSearch size={18} stroke={1.5} />
-                <Text>Blog Categories</Text>
-            </Group>
-            <div className={classes.links}>
-                <div
-                    className={classes.indicator}
-                    style={{
-                        transform: `translateY(calc(${active} * var(--link-height) + var(--indicator-offset)))`,
-                    }}
-                />
-                {items}
-            </div>
-        </div>
+        <Group gap="md" align="center" mb="md">
+            <IconBook size={20} stroke={1.5} />
+            <Text size="sm" fw={500} c="dimmed">Categories:</Text>
+            {items}
+        </Group>
     );
 }
