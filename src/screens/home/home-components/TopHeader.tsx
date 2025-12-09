@@ -2,24 +2,30 @@ import { IconChevronDown } from '@tabler/icons-react';
 import { Burger, Center, Container, Group, Menu, Title, Drawer, Stack } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import classes from '../../../styles/home/TopHeader.module.css';
-import { Link } from "react-router-dom";
 import { ThemeToggle } from '../../../components/ThemeToggle';
 import GithubLogo from '../../../components/GithubLogo';
 import LinkedinLogo from '../../../components/LinkedinLogo';
 
 
 const links = [
-    { link: '/', label: 'Home' },
-    { link: '/projects', label: 'Projects' },
-    { link: '/blog', label: 'Blog' },
+    { link: '#home', label: 'Home' },
+    { link: '#projects', label: 'Projects' },
+    { link: '#blog', label: 'Blog' },
     {
         label: 'About Me',
         links: [
-            { link: '/contact', label: 'Contact Me', type: '' },
+            { link: '#contact', label: 'Contact Me', type: '' },
             { link: '/resume.pdf', label: 'Download Resume', type: 'download' },
         ],
     },
 ];
+
+const scrollToSection = (sectionId: string) => {
+    const element = document.querySelector(sectionId);
+    if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+};
 
 export function TopHeader() {
     const [opened, { toggle }] = useDisclosure(false);
@@ -33,9 +39,16 @@ export function TopHeader() {
 
                     :
 
-                    <Link to={item.link} key={item.label} className={classes.link}>
+                    <a
+                        href={item.link}
+                        className={classes.link}
+                        onClick={(e) => {
+                            e.preventDefault();
+                            scrollToSection(item.link);
+                        }}
+                    >
                         {item.label}
-                    </Link>
+                    </a>
                 }
             </Menu.Item>
         ));
@@ -62,13 +75,17 @@ export function TopHeader() {
         }
 
         return (
-            <Link
+            <a
                 key={link.label}
-                to={link.link ?? '/'}
+                href={link.link ?? '#'}
                 className={classes.link}
+                onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection(link.link ?? '#home');
+                }}
             >
                 {link.label}
-            </Link>
+            </a>
         );
     });
 
@@ -105,25 +122,35 @@ export function TopHeader() {
                             {links.map((link) => {
                                 if (link.links) {
                                     return link.links.map((subLink) => (
-                                        <Link
+                                        <a
                                             key={subLink.label}
-                                            to={subLink.link ?? '/'}
+                                            href={subLink.link ?? '#'}
                                             className={classes.link}
-                                            onClick={toggle}
+                                            onClick={(e) => {
+                                                e.preventDefault();
+                                                if (subLink.type !== 'download') {
+                                                    scrollToSection(subLink.link ?? '#home');
+                                                }
+                                                toggle();
+                                            }}
                                         >
                                             {subLink.label}
-                                        </Link>
+                                        </a>
                                     ));
                                 }
                                 return (
-                                    <Link
+                                    <a
                                         key={link.label}
-                                        to={link.link}
+                                        href={link.link}
                                         className={classes.link}
-                                        onClick={toggle}
+                                        onClick={(e) => {
+                                            e.preventDefault();
+                                            scrollToSection(link.link ?? '#home');
+                                            toggle();
+                                        }}
                                     >
                                         {link.label}
-                                    </Link>
+                                    </a>
                                 );
                             })}
                             <Group justify="center" mt="xl">

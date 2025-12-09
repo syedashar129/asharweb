@@ -1,11 +1,11 @@
 import './App.css'
 import { TopHeader } from "./screens/home/home-components/TopHeader.tsx";
-import { Route, Routes } from "react-router-dom";
 import Home from "./screens/home/HomePage.tsx";
 import Projects from "./screens/projects/Projects.tsx";
 import Blog from "./screens/blog/Blog.tsx";
 import Contact from "./screens/contact/Contact.tsx";
 import { BackgroundAnimation } from "./components/BackgroundAnimation.tsx";
+import { Container, Divider } from "@mantine/core";
 
 
 function App() {
@@ -16,16 +16,37 @@ function App() {
       {/*this header stays on every page*/}
       <TopHeader />
 
+      {/* Home Section */}
+      <section id="home" className="page-section">
+        <Container size="xl">
+          <Home />
+        </Container>
+      </section>
 
-      <Routes>
-        <Route path={'/'} element={<Home />} />
-        <Route path={'/projects'} element={<Projects />} />
-        <Route path={'/blog'} element={<Blog />} />
-        <Route path={'/contact'} element={<Contact />} />
-      </Routes>
+      <Divider size="md" my="xl" />
 
+      {/* Projects Section */}
+      <section id="projects" className="page-section">
+        <Projects />
+      </section>
 
+      <Divider size="md" my="xl" />
 
+      {/* Blog Section */}
+      <section id="blog" className="page-section">
+        <Container size="xl" py="xl">
+          <Blog />
+        </Container>
+      </section>
+
+      <Divider size="md" my="xl" />
+
+      {/* Contact Section */}
+      <section id="contact" className="page-section">
+        <Container size="xl" py="xl">
+          <Contact />
+        </Container>
+      </section>
 
     </>
   )

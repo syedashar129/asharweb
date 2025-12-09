@@ -3,7 +3,6 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.tsx'
 import { MantineProvider } from "@mantine/core";
-import { HashRouter} from "react-router-dom";
 
 import '@mantine/core/styles.css'; // applying mantine ui global styles
 
@@ -29,9 +28,7 @@ createRoot(document.getElementById('root')!).render(
             }}
             defaultColorScheme="dark"
         >
-            <HashRouter>
-                <App />
-            </HashRouter>
+            <App />
         </MantineProvider>
     </StrictMode>,
 )

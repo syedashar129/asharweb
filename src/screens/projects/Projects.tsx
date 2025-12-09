@@ -1,5 +1,5 @@
 import { ProjectItem } from "./ProjectItem.tsx";
-import { SimpleGrid, Container } from '@mantine/core';
+import { SimpleGrid, Container, Title } from '@mantine/core';
 
 export default function Projects() {
 
@@ -72,6 +72,7 @@ export default function Projects() {
 
     return (
         <Container size="xl" py="xl">
+            <Title mb="xl">Projects</Title>
             <SimpleGrid cols={{ base: 1, sm: 2, md: 3 }} spacing="lg">
                 {projects.map((project, index) => (
                     <ProjectItem

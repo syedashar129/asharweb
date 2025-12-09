@@ -1,8 +1,14 @@
 import { IconCheck } from '@tabler/icons-react';
 import { Button, Container, Group, Image, List, Text, ThemeIcon, Title } from '@mantine/core';
-import { Link } from "react-router-dom";
 import profileImg from '../../../assets/syed_ashar_grad_photo.jpg';
 import classes from '../../../styles/home/MainHeader.module.css';
+
+const scrollToSection = (sectionId: string) => {
+    const element = document.querySelector(sectionId);
+    if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+};
 
 export function MainHeader() {
     return (
@@ -14,7 +20,7 @@ export function MainHeader() {
                     </Title>
                     <Text c="dimmed" mt="md">
                         I am a full-time software engineer with over 2 years of experience. I am
-                        passionate about web development and data, and I’m always eager to take on new challenges and contribute
+                        passionate about web development and data, and I'm always eager to take on new challenges and contribute
                         to meaningful projects.
                     </Text>
 
@@ -40,15 +46,24 @@ export function MainHeader() {
                     </List>
 
                     <Group mt={30}>
-                        <Link to={'/projects'}>
-                            <Button radius="xl" size="md" className={classes.control}>Check My Projects</Button>
-                        </Link>
+                        <Button 
+                            radius="xl" 
+                            size="md" 
+                            className={classes.control}
+                            onClick={() => scrollToSection('#projects')}
+                        >
+                            Check My Projects
+                        </Button>
 
-                        <Link to={'/contact'}>
-                            <Button variant="default" radius="xl" size="md" className={classes.control}>
-                                Contact me
-                            </Button>
-                        </Link>
+                        <Button 
+                            variant="default" 
+                            radius="xl" 
+                            size="md" 
+                            className={classes.control}
+                            onClick={() => scrollToSection('#contact')}
+                        >
+                            Contact me
+                        </Button>
                     </Group>
                 </div>
                 <Image src={profileImg} className={classes.image} radius="50%" />
