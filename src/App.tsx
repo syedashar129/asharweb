@@ -4,6 +4,7 @@ import Home from "./screens/home/HomePage.tsx";
 import Projects from "./screens/projects/Projects.tsx";
 import Blog from "./screens/blog/Blog.tsx";
 import Contact from "./screens/contact/Contact.tsx";
+import { Hobbies } from "./screens/home/home-components/Hobbies.tsx";
 import { BackgroundAnimation } from "./components/BackgroundAnimation.tsx";
 import { Container, Divider } from "@mantine/core";
 
@@ -36,6 +37,15 @@ function App() {
       <section id="blog" className="page-section">
         <Container size="xl" py="xl">
           <Blog />
+        </Container>
+      </section>
+
+      <Divider size="md" my="xl" />
+
+      {/* Hobbies Section */}
+      <section id="hobbies" className="page-section">
+        <Container size="xl" py="xl">
+          <Hobbies />
         </Container>
       </section>
 
