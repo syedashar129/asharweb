@@ -1,23 +1,9 @@
-import { Button, Group, SimpleGrid, Textarea, TextInput, Title } from '@mantine/core';
-import { useForm } from '@mantine/form';
+import { Button, Group, Stack, Text, Title, Anchor } from '@mantine/core';
+import { IconMail, IconBrandLinkedin } from '@tabler/icons-react';
 
 export function ContactInfo() {
-  const form = useForm({
-    initialValues: {
-      name: '',
-      email: '',
-      subject: '',
-      message: '',
-    },
-    validate: {
-      name: (value) => value.trim().length < 2,
-      email: (value) => !/^\S+@\S+$/.test(value),
-      subject: (value) => value.trim().length === 0,
-    },
-  });
-
   return (
-    <form onSubmit={form.onSubmit(() => {})}>
+    <Stack gap="xl" align="center" mt="xl">
       <Title
         order={2}
         size="h1"
@@ -28,48 +14,51 @@ export function ContactInfo() {
         Get in touch
       </Title>
 
-      <SimpleGrid cols={{ base: 1, sm: 2 }} mt="xl">
-        <TextInput
-          label="Name"
-          placeholder="Your name"
-          name="name"
-          variant="filled"
-          {...form.getInputProps('name')}
-        />
-        <TextInput
-          label="Email"
-          placeholder="Your email"
-          name="email"
-          variant="filled"
-          {...form.getInputProps('email')}
-        />
-      </SimpleGrid>
+      <Text size="lg" c="dimmed" ta="center" maw={600}>
+        Feel free to reach out to me via email or LinkedIn. I'd love to hear from you!
+      </Text>
 
-      <TextInput
-        label="Subject"
-        placeholder="Subject"
-        mt="md"
-        name="subject"
-        variant="filled"
-        {...form.getInputProps('subject')}
-      />
-      <Textarea
-        mt="md"
-        label="Message"
-        placeholder="Your message"
-        maxRows={10}
-        minRows={5}
-        autosize
-        name="message"
-        variant="filled"
-        {...form.getInputProps('message')}
-      />
+      <Group justify="center" gap="md" mt="md">
+        <Button
+          component="a"
+          href="mailto:syedashar25@gmail.com"
+          leftSection={<IconMail size={18} />}
+          size="lg"
+          variant="filled"
+        >
+          Email Me
+        </Button>
 
-      <Group justify="center" mt="xl">
-        <Button type="submit" size="md">
-          Send message
+        <Button
+          component="a"
+          href="https://www.linkedin.com/in/syed-ashar"
+          target="_blank"
+          rel="noopener noreferrer"
+          leftSection={<IconBrandLinkedin size={18} />}
+          size="lg"
+          variant="outline"
+        >
+          LinkedIn
         </Button>
       </Group>
-    </form>
+
+      <Stack gap="xs" align="center" mt="xl">
+        <Text size="sm" c="dimmed" ta="center">
+          <Anchor href="mailto:syedashar25@gmail.com" underline="hover">
+            syedashar25@gmail.com
+          </Anchor>
+        </Text>
+        <Text size="sm" c="dimmed" ta="center">
+          <Anchor 
+            href="https://www.linkedin.com/in/syed-ashar" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            underline="hover"
+          >
+            linkedin.com/in/syed-ashar
+          </Anchor>
+        </Text>
+      </Stack>
+    </Stack>
   );
 }
