@@ -3,7 +3,7 @@ import { IconMail, IconBrandLinkedin } from '@tabler/icons-react';
 
 export function ContactInfo() {
   return (
-    <Stack gap="xl" align="center" mt="xl">
+    <Stack gap="xl" align="center">
       <Title
         order={2}
         size="h1"

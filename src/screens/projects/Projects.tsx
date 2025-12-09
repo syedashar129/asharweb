@@ -5,16 +5,29 @@ export default function Projects() {
 
     const projects = [
         {
-            title: 'AshFantasy',
-            type: 'Discord Bot',
-            description: 'A fantasy football Discord bot that sends real-time notifications for big plays, provides injury updates throughout the week, and delivers major headlines using ESPN data. Keeps your league up to date effortlessly.',
+            title: 'TikTok Automator',
+            type: 'Automation Tool',
+            description: 'An automation tool that automates educational coding-related TikToks to a TikTok channel to help software developers learn and stay updated with the latest programming concepts and techniques.',
             badges: [
-                { emoji: '🤖', label: 'Discord.js' },
-                { emoji: '🏈', label: 'ESPN API' },
-                { emoji: '⚡', label: 'Node.js' },
-                { emoji: '☁️', label: 'AWS Lambda' }
+                { emoji: '🎬', label: 'TikTok API' },
+                { emoji: '🐍', label: 'Python' },
+                { emoji: '🤖', label: 'Automation' },
+                { emoji: '📚', label: 'Content Creation' }
             ],
-            imgSrc: 'https://loremflickr.com/800/600/football,stadium?lock=1',
+            imgSrc: 'https://loremflickr.com/800/600/tiktok,code,programming?lock=2',
+            githubLink: ''
+        },
+        {
+            title: 'TaskDo-Er',
+            type: 'AI Agent',
+            description: 'An intelligent system that stores all questions about normal bills and budgeting. It uses RAG, LLM, and advanced AI techniques to answer any questions about passwords, deadlines, money, and other financial information. The system can also act as an autonomous agent to perform these tasks automatically.',
+            badges: [
+                { emoji: '🧠', label: 'LLM' },
+                { emoji: '🔍', label: 'RAG' },
+                { emoji: '🤖', label: 'AI Agent' },
+                { emoji: '💰', label: 'Budgeting' }
+            ],
+            imgSrc: 'https://loremflickr.com/800/600/ai,automation,finance?lock=3',
             githubLink: ''
         },
         {
@@ -41,7 +54,7 @@ export default function Projects() {
                 { emoji: '💰', label: 'Finance API' }
             ],
             imgSrc: 'https://loremflickr.com/800/600/finance,stock,chart?lock=1',
-            githubLink: ''
+            githubLink: 'https://github.com/syedashar129/StockScope'
         },
         {
             title: 'FoodieConnect',

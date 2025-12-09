@@ -1,4 +1,4 @@
-import { Title } from "@mantine/core";
+import { Title, Stack } from "@mantine/core";
 import {HomeBlogCard} from "./HomeBlogCard.tsx";
 import {TableOfContents} from "./TableOfContents.tsx";
 
@@ -6,10 +6,10 @@ import {TableOfContents} from "./TableOfContents.tsx";
 export default function Blog(){
 
     return (
-        <>
-            <Title>Blog</Title>
+        <Stack gap="xl">
+            <Title mb="md">Blog</Title>
             <TableOfContents/>
             <HomeBlogCard/>
-        </>
+        </Stack>
     )
 }

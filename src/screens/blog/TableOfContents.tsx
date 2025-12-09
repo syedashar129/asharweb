@@ -5,18 +5,13 @@ import { Box, Group, Text } from '@mantine/core';
 import classes from '../../styles/blog/TableOfContents.module.css'
 
 const links = [
-    { label: 'Usage', link: '#usage', order: 1 },
-    { label: 'Position and placement', link: '#position', order: 1 },
-    { label: 'With other overlays', link: '#overlays', order: 1 },
-    { label: 'Manage focus', link: '#focus', order: 1 },
-    { label: 'Examples', link: '#1', order: 1 },
-    { label: 'Show on focus', link: '#2', order: 2 },
-    { label: 'Show on hover', link: '#3', order: 2 },
-    { label: 'With form', link: '#4', order: 2 },
+    { label: 'UTD Bachelors CS Blog', link: '#utd-bachelors', order: 1 },
+    { label: 'UT Austin Masters CS Blog', link: '#ut-austin-masters', order: 1 },
+    { label: 'Software Engineer Blog', link: '#software-engineer', order: 1 },
 ];
 
 export function TableOfContents() {
-    const [active, setActive] = useState(2);
+    const [active, setActive] = useState(0);
 
     const items = links.map((item, index) => (
         <Box<'a'>
@@ -38,7 +33,7 @@ export function TableOfContents() {
         <div className={classes.root}>
             <Group mb="md">
                 <IconListSearch size={18} stroke={1.5} />
-                <Text>Table of contents</Text>
+                <Text>Blog Categories</Text>
             </Group>
             <div className={classes.links}>
                 <div
