@@ -185,10 +185,25 @@
 
     /* Hide profile picture on mobile, tablet, and small desktop */
     /* Only show on large desktop screens (1024px and above) */
+    /* Using multiple hiding methods for LinkedIn and other in-app browsers */
     display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    position: absolute !important;
+    left: -9999px !important;
+    width: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
 
     @media (min-width: 1024px) {
         display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: relative !important;
+        left: auto !important;
+        width: 376px !important;
+        height: 356px !important;
+        overflow: visible !important;
     }
 }
 
