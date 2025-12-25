@@ -1,21 +1,14 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import path from 'path'
 
-// https://vite.dev/config/
+// https://vitejs.dev/config/
 export default defineConfig({
-  base: '/asharweb/', 
   plugins: [react()],
-  server: {
-    watch: {
-      usePolling: true
-    }
-  },
-  css: {
-    modules: {
-      localsConvention: 'camelCase', // Optional: Use camelCase for class names
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
     },
   },
-  build: {
-    outDir: 'docs'             // 👈 output build into /docs
-  }
 })
+

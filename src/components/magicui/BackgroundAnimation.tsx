@@ -1,5 +1,4 @@
 import { useEffect, useRef } from 'react';
-import { useMantineTheme } from '@mantine/core';
 
 interface Particle {
     x: number;
@@ -11,7 +10,9 @@ interface Particle {
 
 export function BackgroundAnimation() {
     const canvasRef = useRef<HTMLCanvasElement>(null);
-    const theme = useMantineTheme();
+    
+    // Colors for dark navy blue background - lighter particles for contrast
+    const particleColor = 'rgba(96, 165, 250, 0.6)'; // blue-400 with opacity for visibility on dark
 
     useEffect(() => {
         const canvas = canvasRef.current;
@@ -25,7 +26,7 @@ export function BackgroundAnimation() {
         let mouse = { x: -1000, y: -1000 };
 
         // Configuration
-        const particleCount = window.innerWidth < 768 ? 40 : 80; // Fewer particles on mobile
+        const particleCount = window.innerWidth < 768 ? 50 : 100; // More particles for visibility
         const connectionDistance = 150;
         const mouseDistance = 200;
 
@@ -42,7 +43,7 @@ export function BackgroundAnimation() {
                     y: Math.random() * canvas.height,
                     vx: (Math.random() - 0.5) * 0.5, // Slow velocity
                     vy: (Math.random() - 0.5) * 0.5,
-                    size: Math.random() * 2 + 1,
+                    size: Math.random() * 3 + 2, // Larger particles for better visibility
                 });
             }
         };
@@ -79,8 +80,7 @@ export function BackgroundAnimation() {
                 // Draw particle
                 ctx.beginPath();
                 ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-                ctx.fillStyle = theme.colors.blue[6]; // Use theme color
-                ctx.globalAlpha = 0.3; // Semi-transparent
+                ctx.fillStyle = particleColor;
                 ctx.fill();
 
                 // Connect particles
@@ -91,9 +91,9 @@ export function BackgroundAnimation() {
 
                     if (distance < connectionDistance) {
                         ctx.beginPath();
-                        ctx.strokeStyle = theme.colors.gray[6];
-                        ctx.globalAlpha = 0.1 * (1 - distance / connectionDistance); // Fade out with distance
-                        ctx.lineWidth = 1;
+                        const alpha = 0.3 * (1 - distance / connectionDistance); // Fade out with distance
+                        ctx.strokeStyle = `rgba(96, 165, 250, ${alpha})`; // blue-400 with dynamic alpha for dark background
+                        ctx.lineWidth = 1.5;
                         ctx.moveTo(particle.x, particle.y);
                         ctx.lineTo(particles[j].x, particles[j].y);
                         ctx.stroke();
@@ -128,20 +128,15 @@ export function BackgroundAnimation() {
             window.removeEventListener('resize', handleResize);
             window.removeEventListener('mousemove', handleMouseMove);
         };
-    }, [theme.colors]);
+    }, []);
 
     return (
         <canvas
             ref={canvasRef}
+            className="fixed top-0 left-0 w-screen h-screen pointer-events-none"
             style={{
-                position: 'fixed',
-                top: 0,
-                left: 0,
-                width: '100%',
-                height: '100%',
-                zIndex: -1, // Behind everything
-                pointerEvents: 'none', // Don't block clicks
-                background: 'transparent', // Let CSS background show through if needed
+                background: 'transparent',
+                zIndex: 0,
             }}
         />
     );
