@@ -6,40 +6,22 @@ import { Marquee } from "../components/magicui/marquee";
 
 const reviews = [
   {
-    name: "Jack",
-    username: "@jack",
-    body: "I've never seen anything like this before. It's amazing. I love it.",
-    img: "https://avatar.vercel.sh/jack",
+    name: "Software Engineer",
+    username: "JPMorgan Chase",
+    body: "Currently building enterprise-grade applications on the Syndication Trades team",
+    img: "/jpmorgan-logo.jpg",
+  },
+  {  
+    name: "M.S. in Computer Science",
+    username: "University of Texas at Austin",
+    body: "Specialized in AI and Machine Learning.",
+    img: "/ut-austin-logo.jpg",
   },
   {
-    name: "Jill",
-    username: "@jill",
-    body: "I don't know what to say. I'm speechless. This is amazing.",
-    img: "https://avatar.vercel.sh/jill",
-  },
-  {
-    name: "John",
-    username: "@john",
-    body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "https://avatar.vercel.sh/john",
-  },
-  {
-    name: "Jane",
-    username: "@jane",
-    body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "https://avatar.vercel.sh/jane",
-  },
-  {
-    name: "Jenny",
-    username: "@jenny",
-    body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "https://avatar.vercel.sh/jenny",
-  },
-  {
-    name: "James",
-    username: "@james",
-    body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "https://avatar.vercel.sh/james",
+    name: "B.S. in Computer Science",
+    username: "University of Texas at Dallas",
+    body: "Focus on data structures and algorithms & software engineering",
+    img: "/utd-logo.jpg",
   },
 ]
 
@@ -61,8 +43,19 @@ const ReviewCard = ({
         "relative h-full w-64 cursor-pointer overflow-hidden rounded-xl border p-4 bg-white/20 backdrop-blur-sm border-white/30 hover:bg-white/30 transition-colors"
       )}
     >
-      <div className="flex flex-row items-center gap-2">
-        <img className="rounded-full" width="32" height="32" alt="" src={img} />
+      <div className="flex flex-row items-center gap-3">
+        <img 
+          className="rounded-lg object-contain bg-white/10 p-1.5" 
+          width="56" 
+          height="56" 
+          alt={`${username} logo`} 
+          src={img}
+          style={{ minWidth: '56px', minHeight: '56px' }}
+          onError={(e) => {
+            // Fallback to a placeholder if logo fails to load
+            (e.target as HTMLImageElement).src = `https://ui-avatars.com/api/?name=${encodeURIComponent(username)}&background=3b82f6&color=fff&size=128`;
+          }}
+        />
         <div className="flex flex-col">
           <figcaption className="text-sm font-medium text-white">
             {name}
