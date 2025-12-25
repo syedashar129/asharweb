@@ -91,12 +91,12 @@ export function TopHeader() {
 
     return (
         <header className={classes.header}>
-            <Container size="md">
+            <Container size="md" px={{ base: 'xs', sm: 'md' }}>
 
                 {/* this is the top header */}
                 <div className={classes.inner}>
                     {/*<MantineLogo size={28} />*/}
-                    <Title order={3}>Syed Ashar</Title>
+                    <Title order={3} className={classes.title}>Syed Ashar</Title>
                     <Group gap={5} visibleFrom="sm">
                         {items}
                     </Group>

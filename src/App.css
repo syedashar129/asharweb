@@ -1,8 +1,21 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1rem;
   text-align: center;
+}
+
+/* Mobile-first responsive padding */
+@media (min-width: 768px) {
+  #root {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #root {
+    padding: 0.5rem;
+  }
 }
 
 .logo {
@@ -44,18 +57,48 @@
 /* Single-page section styling */
 .page-section {
   min-height: 100vh;
-  padding: 4rem 0;
+  padding: 2rem 0;
   scroll-margin-top: 80px; /* Account for fixed header */
   position: relative;
   animation: fadeInUp 0.6s ease-out;
 }
 
+/* Responsive padding for mobile */
+@media (min-width: 768px) {
+  .page-section {
+    padding: 4rem 0;
+  }
+  
+  .page-section:first-of-type {
+    padding-top: 2rem;
+  }
+  
+  .page-section:last-of-type {
+    padding-bottom: 4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-section {
+    padding: 1.5rem 0;
+    min-height: auto;
+  }
+  
+  .page-section:first-of-type {
+    padding-top: 1rem;
+  }
+  
+  .page-section:last-of-type {
+    padding-bottom: 2rem;
+  }
+}
+
 .page-section:first-of-type {
-  padding-top: 2rem;
+  padding-top: 1rem;
 }
 
 .page-section:last-of-type {
-  padding-bottom: 4rem;
+  padding-bottom: 2rem;
   min-height: auto;
 }
 
@@ -224,6 +267,29 @@ h1, h2, h3, h4, h5, h6 {
   animation: fadeInUp 0.6s ease-out;
 }
 
+/* Mobile text sizing improvements */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.75rem !important;
+    line-height: 1.2 !important;
+  }
+  
+  h2 {
+    font-size: 1.5rem !important;
+    line-height: 1.3 !important;
+  }
+  
+  h3 {
+    font-size: 1.25rem !important;
+    line-height: 1.4 !important;
+  }
+  
+  p, span, div {
+    font-size: 0.9rem !important;
+    line-height: 1.6 !important;
+  }
+}
+
 /* Link hover effects */
 a {
   transition: all 0.3s ease;
@@ -304,4 +370,24 @@ a:hover::after {
   );
   background-size: 1000px 100%;
   animation: shimmer 2s infinite;
+}
+
+/* Prevent horizontal scrolling on mobile */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+/* Ensure containers don't overflow on mobile */
+* {
+  box-sizing: border-box;
+}
+
+/* Better word wrapping for mobile */
+@media (max-width: 480px) {
+  p, span, div, li {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
 }

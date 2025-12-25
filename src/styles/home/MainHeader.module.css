@@ -11,6 +11,11 @@
         padding-top: var(--mantine-spacing-xl);
         padding-bottom: var(--mantine-spacing-xl);
     }
+    
+    @media (max-width: $mantine-breakpoint-xs) {
+        padding-top: var(--mantine-spacing-md);
+        padding-bottom: var(--mantine-spacing-md);
+    }
 }
 
 .content {
@@ -21,6 +26,11 @@
         max-width: 100%;
         margin-right: 0;
         margin-top: var(--mantine-spacing-xl);
+        padding: 0 1rem;
+    }
+    
+    @media (max-width: $mantine-breakpoint-xs) {
+        padding: 0 0.5rem;
     }
 }
 
@@ -34,7 +44,12 @@
     font-weight: 900;
 
     @media (max-width: $mantine-breakpoint-xs) {
-        font-size: 36px;
+        font-size: 28px;
+        line-height: 1.2;
+    }
+    
+    @media (max-width: 375px) {
+        font-size: 24px;
     }
 }
 
@@ -77,6 +92,13 @@
     }
 }
 
+.buttonGroup {
+    @media (max-width: $mantine-breakpoint-xs) {
+        flex-direction: column;
+        width: 100%;
+    }
+}
+
 .control {
     background: rgba(59, 130, 246, 0.1);
     border: 1px solid rgba(59, 130, 246, 0.3);
@@ -90,7 +112,14 @@
     }
 
     @media (max-width: $mantine-breakpoint-xs) {
-        flex: 1;
+        width: 100%;
+    }
+}
+
+.description {
+    @media (max-width: $mantine-breakpoint-xs) {
+        font-size: 0.9rem !important;
+        line-height: 1.6 !important;
     }
 }
 
@@ -125,6 +154,11 @@
         height: auto;
         aspect-ratio: 1;
         border-radius: 50%;
+        margin: 0 auto;
+    }
+    
+    @media (max-width: $mantine-breakpoint-xs) {
+        max-width: 250px;
     }
 }
 

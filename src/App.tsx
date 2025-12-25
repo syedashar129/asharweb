@@ -19,41 +19,41 @@ function App() {
 
       {/* Home Section */}
       <section id="home" className="page-section">
-        <Container size="xl">
+        <Container size="xl" px={{ base: 'xs', sm: 'md', md: 'xl' }}>
           <Home />
         </Container>
       </section>
 
-      <Divider size="sm" my="xl" variant="dashed" />
+      <Divider size="sm" my={{ base: 'md', sm: 'xl' }} variant="dashed" />
 
       {/* Projects Section */}
       <section id="projects" className="page-section">
         <Projects />
       </section>
 
-      <Divider size="sm" my="xl" variant="dashed" />
+      <Divider size="sm" my={{ base: 'md', sm: 'xl' }} variant="dashed" />
 
       {/* Blog Section */}
       <section id="blog" className="page-section">
-        <Container size="xl" py="xl">
+        <Container size="xl" py="xl" px={{ base: 'xs', sm: 'md', md: 'xl' }}>
           <Blog />
         </Container>
       </section>
 
-      <Divider size="sm" my="xl" variant="dashed" />
+      <Divider size="sm" my={{ base: 'md', sm: 'xl' }} variant="dashed" />
 
       {/* Hobbies Section */}
       <section id="hobbies" className="page-section">
-        <Container size="xl" py="xl">
+        <Container size="xl" py="xl" px={{ base: 'xs', sm: 'md', md: 'xl' }}>
           <Hobbies />
         </Container>
       </section>
 
-      <Divider size="sm" my="xl" variant="dashed" />
+      <Divider size="sm" my={{ base: 'md', sm: 'xl' }} variant="dashed" />
 
       {/* Contact Section */}
       <section id="contact" className="page-section">
-        <Container size="xl" py="xl">
+        <Container size="xl" py="xl" px={{ base: 'xs', sm: 'md', md: 'xl' }}>
           <Contact />
         </Container>
       </section>

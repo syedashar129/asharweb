@@ -12,14 +12,14 @@ const scrollToSection = (sectionId: string) => {
 
 export function MainHeader() {
     return (
-        <Container size="md">
+        <Container size="md" px={{ base: 'xs', sm: 'md', md: 'xl' }}>
             <div className={classes.inner}>
                 <div className={classes.content}>
                     <Title className={classes.title}>
                         Hello, I'm <span className={classes.highlight}>Syed Ashar</span> <br /> 
                         <span className={classes.subtitle}>Software Engineer</span>
                     </Title>
-                    <Text c="dimmed" mt="md" size="lg" fw={400} lh={1.7}>
+                    <Text c="dimmed" mt="md" size="lg" fw={400} lh={1.7} className={classes.description}>
                         Full-stack software engineer with 2+ years of experience building scalable enterprise applications. 
                         Passionate about crafting elegant solutions to complex problems and delivering high-quality software 
                         that drives business value.
@@ -46,7 +46,7 @@ export function MainHeader() {
                         </List.Item>
                     </List>
 
-                    <Group mt={30}>
+                    <Group mt={30} gap="md" className={classes.buttonGroup}>
                         <Button 
                             radius="xl" 
                             size="md" 
