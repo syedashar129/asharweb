@@ -1,5 +1,6 @@
 import { IconCheck } from '@tabler/icons-react';
 import { Button, Container, Group, Image, List, Text, ThemeIcon, Title } from '@mantine/core';
+import { useMediaQuery } from '@mantine/hooks';
 import profileImg from '../../../assets/syed_ashar_grad_photo.jpg';
 import classes from '../../../styles/home/MainHeader.module.css';
 
@@ -11,6 +12,9 @@ const scrollToSection = (sectionId: string) => {
 };
 
 export function MainHeader() {
+    // Only show image on screens 1024px and wider
+    const isLargeScreen = useMediaQuery(`(min-width: 1024px)`);
+
     return (
         <Container size="md" px={{ base: 'xs', sm: 'md', md: 'xl' }}>
             <div className={classes.inner}>
@@ -26,8 +30,8 @@ export function MainHeader() {
                     </Text>
 
                     <List
-                        mt={30}
-                        spacing="md"
+                        mt={{ base: 10, sm: 30 }}
+                        spacing="xs"
                         size="sm"
                         icon={
                             <ThemeIcon size={20} radius="xl" className={classes.checkmarkThemeIcon}>
@@ -46,7 +50,7 @@ export function MainHeader() {
                         </List.Item>
                     </List>
 
-                    <Group mt={30} gap="md" className={classes.buttonGroup}>
+                    <Group mt={{ base: 15, sm: 30 }} gap="md" className={classes.buttonGroup}>
                         <Button 
                             radius="xl" 
                             size="md" 
@@ -67,7 +71,7 @@ export function MainHeader() {
                         </Button>
                     </Group>
                 </div>
-                <Image src={profileImg} className={classes.image} radius="50%" />
+                {isLargeScreen && <Image src={profileImg} className={classes.image} radius="50%" />}
             </div>
         </Container>
     );

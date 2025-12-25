@@ -12,9 +12,17 @@
   }
 }
 
+/* Mobile devices - responsive padding for all screen sizes */
 @media (max-width: 480px) {
   #root {
-    padding: 0.5rem;
+    padding: 0.25rem clamp(0.5rem, 2vw, 1rem);
+  }
+}
+
+/* Extra small mobile devices */
+@media (max-width: 360px) {
+  #root {
+    padding: 0.25rem 0.5rem;
   }
 }
 
@@ -84,8 +92,16 @@
     min-height: auto;
   }
   
+  /* First section should fit within viewport on all mobile devices */
+  /* Header: 56px + margin: 5px = 61px, so content area = 100vh - 61px */
+  /* Using viewport units ensures it works on any mobile device size */
   .page-section:first-of-type {
-    padding-top: 1rem;
+    padding-top: 0;
+    padding-bottom: 0.5rem;
+    /* Ensure section fits viewport, but allow scrolling if content is longer */
+    min-height: calc(100vh - 61px);
+    /* Use viewport height to ensure picture is visible on initial load */
+    max-height: 100vh;
   }
   
   .page-section:last-of-type {
